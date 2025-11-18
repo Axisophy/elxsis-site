@@ -21,8 +21,8 @@ export default function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="w-full bg-white">
-      {/* Top: 12-column grid */}
+    <header className="w-full bg-white relative">
+      {/* Top: 12-column grid (normal header) */}
       <div className="mx-auto max-w-[1440px] px-4 lg:px-8 py-12 lg:py-16 min-h-[220px] lg:min-h-[260px] grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-8">
         {/* Logo + micro-title (cols 1–3) */}
         <div className="md:col-span-3 md:col-start-1 flex flex-col gap-2">
@@ -36,7 +36,7 @@ export default function SiteHeader() {
             <button
               type="button"
               onClick={() => setMobileOpen((open) => !open)}
-              className="md:hidden ml-4 inline-flex items-center justify-center rounded-full border border-neutral-900 px-2.5 py-2 text-neutral-900"
+              className="md:hidden ml-4 inline-flex items-center justify-center rounded-full border border-neutral-900 px-2.5 py-2 text-neutral-900 bg-white"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               <span className="flex flex-col gap-1">
@@ -51,13 +51,14 @@ export default function SiteHeader() {
           </span>
         </div>
 
-        {/* Descriptor (cols 4–8) */}
+        {/* Descriptor (cols 4–6) */}
         <div className="md:col-span-3 md:col-start-4 text-[15px] md:text-[19px] lg:text-[20px] leading-relaxed md:leading-snug text-neutral-800 font-normal">
-        <p>{descriptor}</p>
+          <p>{descriptor}</p>
         </div>
 
-        {/* Nav + meta: social + contact + status (cols 9–12) */}
-        <div className="md:col-span-6 md:col-start-7 flex flex-col gap-3 md:gap-4 md:items-end text-xs md:text-sm text-neutral-900">          {/* Desktop nav in top-right */}
+        {/* Nav + meta: social + contact + status (cols 7–12) */}
+        <div className="md:col-span-6 md:col-start-7 flex flex-col gap-3 md:gap-4 md:items-end text-xs md:text-sm text-neutral-900">
+          {/* Desktop nav in top-right */}
           <nav className="hidden md:block">
             <ul className="flex flex-wrap justify-end gap-4 text-neutral-900">
               {navItems.map((item) => (
@@ -124,25 +125,72 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
+      {/* Mobile full-width overlay menu that replaces the header area */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-neutral-200 bg-white">
-          <div className="mx-auto max-w-[1440px] px-4 lg:px-8 py-3">
-            <ul className="flex flex-col gap-1 text-neutral-900">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block w-full py-2 text-sm font-[600] uppercase tracking-[0.12em]"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+        <div className="absolute inset-0 bg-pink-500 text-neutral-900 md:hidden">
+          <div className="mx-auto max-w-[1440px] h-full px-4 lg:px-8 py-6 flex flex-col justify-between">
+            {/* Top row: logo left */}
+            <div className="flex items-start justify-between">
+              <Link href="/" onClick={() => setMobileOpen(false)}>
+                <ElxsisLogo className="h-7 w-auto text-neutral-900" />
+              </Link>
+            </div>
+
+            {/* Middle: menu items on the right, stacked */}
+            <div className="flex justify-between gap-6">
+              <div /> {/* empty left column to echo logo column */}
+              <div className="text-right space-y-1">
+                {navItems.map((item) => (
+                  <div key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="text-lg font-[700] uppercase tracking-[0.16em] leading-tight underline underline-offset-4"
+                    >
+                      {item.label}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Bottom: instagram + email */}
+            <div className="flex items-end justify-between gap-4">
+              <a
+                href="https://instagram.com/elx_sis"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center rounded-full border border-neutral-900 px-3 py-1.5
+                           text-[11px] font-[600] uppercase tracking-[0.08em]
+                           text-neutral-900 bg-pink-500
+                           transition-colors duration-200
+                           hover:bg-neutral-900 hover:border-neutral-900 hover:text-pink-500"
+              >
+                instagram:{" "}
+                <span className="ml-1 normal-case font-[400]">@elx_sis</span>
+              </a>
+
+              <a
+                href="mailto:studio@elxsis.com"
+                className="text-[11px] leading-snug text-neutral-900 text-right"
+              >
+                studio@elxsis.com
+                <br />
+                {/* optional second line if you want later */}
+              </a>
+            </div>
+
+            {/* Close arrow bottom-right */}
+            <button
+              type="button"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+              className="absolute bottom-4 right-4 inline-flex items-center justify-center"
+            >
+              <span className="inline-block text-2xl leading-none">↑</span>
+            </button>
           </div>
-        </nav>
+        </div>
       )}
     </header>
   );
