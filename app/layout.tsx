@@ -9,14 +9,12 @@ export const metadata: Metadata = {
     "Elxsis is a computational art and research studio producing cross-disciplinary work where science and mathematics meet high-resolution visual experimentation.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-neutral-950 text-neutral-50 antialiased">
+      <body className="bg-white text-neutral-900 antialiased">
         <SiteHeader />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </body>
     </html>
   );
