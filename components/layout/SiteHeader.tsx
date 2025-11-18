@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ElxsisLogo } from "@/components/icons/ElxsisLogo";
 
 const descriptor =
   "Elxsis is a computational art and research studio producing cross-disciplinary work where science and mathematics meet high-resolution visual experimentation.";
@@ -13,12 +14,10 @@ export default function SiteHeader() {
       <div className="max-w-7xl mx-auto px-6 lg:px-16 py-8 lg:py-10 grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-6">
         {/* Logo + micro-title (cols 1–3) */}
         <div className="md:col-span-3 flex flex-col gap-1">
-          <Link
-            href="/"
-            className="text-2xl md:text-3xl font-semibold tracking-tight lowercase"
-          >
-            elxsis
-          </Link>
+        <Link href="/" className="inline-flex items-center gap-2">
+        <ElxsisLogo className="h-7 md:h-9 w-auto" />
+        <span className="sr-only">Elxsis</span>
+        </Link>
           <span className="text-xs text-neutral-400">
             computational art &amp; research studio
           </span>
