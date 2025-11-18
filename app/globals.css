@@ -1,42 +1,37 @@
 @import "tailwindcss";
 
 :root {
-    /* Base colours for the site */
-    --background: #ffffff;
-    --foreground: #111827; /* a nice dark grey, not pure black */
+  --background: #ffffff;
+  --foreground: #111827;
 
-  /* Typography roles */
-  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    sans-serif;
-  --font-display: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    sans-serif;
-  --font-expressive: system-ui, -apple-system, BlinkMacSystemFont,
-    "SF Pro Display", sans-serif;
-}
 
-/* Later, when you add Adobe Fonts, we’ll update these:
-:root {
-  --font-body: "neue-haas-grotesk-display", system-ui, sans-serif;
-  --font-display: "area-variable", system-ui, sans-serif;
-  --font-expressive: "fractul-variable", system-ui, sans-serif;
-}
-*/
+ /* Body: NHG Text */
+--font-body: "neue-haas-grotesk-display", system-ui, -apple-system,
+  BlinkMacSystemFont, sans-serif;
+
+/* Display: DJR Forma Mono (exact family name from the kit CSS) */
+--font-display: "forma-djr-mono", system-ui, -apple-system,
+  BlinkMacSystemFont, sans-serif;
+
+/* Expressive: keep spare for later, for now same as body or display */
+--font-expressive: var(--font-display);
+} 
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-body);
+background: var(--background);
+color: var(--foreground);
+font-family: var(--font-body);
 }
 
-/* Utility classes so we can explicitly choose roles */
+/* Utility roles */
 .font-body {
-  font-family: var(--font-body);
+font-family: var(--font-body);
 }
 
 .font-display {
-  font-family: var(--font-display);
+font-family: var(--font-display);
 }
 
 .font-expressive {
-  font-family: var(--font-expressive);
+font-family: var(--font-expressive);
 }
