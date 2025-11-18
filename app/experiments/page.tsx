@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { PageTitle } from "@/components/typography";
 
 type Experiment = {
   slug: string;
@@ -73,11 +74,9 @@ export default function ExperimentsPage() {
 
   return (
     <main className="mx-auto max-w-[1440px] px-4 lg:px-8 py-10 lg:py-16">
-      <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
-        <h1 className="text-xl md:text-5xl  text-neutral-900 font-[700] tracking-[-0.025em]">
-          Experiments
-        </h1>
-        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
+     <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
+  <PageTitle>Experiments</PageTitle>
+  <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
           A working catalogue of ongoing and completed experiments – from
           dynamical systems and attractors to astrophysical data and quantum
           structures. Some of these studies are already available as large-scale

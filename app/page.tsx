@@ -1,22 +1,21 @@
+// app/page.tsx
+import Image from "next/image";
+import Link from "next/link";
+import { PageTitle } from "@/components/typography";
+
 export default function HomePage() {
   return (
-    <main className="mx-auto max-w-[1440px] px-4 lg:px-8 py-10 lg:py-16">
-      <section className="max-w-3xl space-y-4">
-        <h1 className="text-base md:text-lg tracking-[0.18em] uppercase text-neutral-500 font-[600]">
-          Elxsis — current work
-        </h1>
-        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
-          Elxsis is a computational art and research studio exploring how
-          scientific and mathematical systems can be transformed into
-          high-resolution visual experiments. This site collects ongoing
-          studies, larger projects, and prototype ideas in various states of
-          completion.
-        </p>
-        <p className="text-[14px] md:text-[16px] leading-relaxed text-neutral-700">
-          Below is a small selection of current experiments. Some are static
-          large-format prints, others are motion tests, interactive prototypes,
-          or speculative studies intended for future collaborations.
-        </p>
+    <main className="w-full">
+      {/* Hero image that the header gradient sits over */}
+      <section className="relative w-full h-[70vh] md:h-[80vh]">
+        <Image
+          src="/elxsis-hero-02.jpg"   // <- MUST match the filename in /public
+          alt="Elxsis experimental visual"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
       </section>
 
       <section className="mt-10 lg:mt-14">

@@ -1,27 +1,33 @@
+import { PageTitle } from "@/components/typography";
+
 export default function ContactPage() {
-    return (
-      <main className="mx-auto max-w-[1440px] px-4 lg:px-8 py-10 lg:py-16">
-        <h1 className="text-sm md:text-base tracking-[0.18em] uppercase text-neutral-500 font-[600]">
-          Contact
-        </h1>
-        <div className="mt-4 max-w-3xl space-y-4 text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
-          <p>
-            For commissions, collaborations, or enquiries about existing work,
-            please get in touch via{" "}
-            <a
-              href="mailto:studio@elxsis.com"
-              className="underline underline-offset-4 decoration-pink-500 hover:text-pink-600"
-            >
-              studio@elxsis.com
-            </a>
-            .
-          </p>
-          <p>
-            Elxsis is particularly interested in collaborations with research
-            groups, observatories, labs, museums, and technology organisations
-            exploring the visual potential of scientific and mathematical systems.
-          </p>
-        </div>
-      </main>
-    );
-  }
+  return (
+    <main className="mx-auto max-w-[1440px] px-4 lg:px-8 py-10 lg:py-16">
+      <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
+        <PageTitle>Contact</PageTitle>
+        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
+          For commissions, collaborations, institutional projects, or enquiries
+          about existing work, please email{" "}
+          <a
+            href="mailto:studio@elxsis.com"
+            className="underline underline-offset-4"
+          >
+            studio@elxsis.com
+          </a>{" "}
+          with as much context as you like – including timelines, formats, and
+          any relevant technical or spatial constraints. You can also follow
+          in-progress experiments and studio notes via{" "}
+          <a
+            href="https://instagram.com/elx_sis"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-4"
+          >
+            @elx_sis
+          </a>{" "}
+          on Instagram.
+        </p>
+      </header>
+    </main>
+  );
+}
