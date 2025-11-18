@@ -52,11 +52,11 @@ export default function SiteHeader() {
         </div>
 
         {/* Descriptor (cols 4–6) */}
-        <div className="md:col-span-3 md:col-start-4 text-[15px] md:text-[19px] lg:text-[20px] leading-relaxed md:leading-snug text-neutral-800 font-normal">
+        <div className="md:col-span-3 md:col-start-4 text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed md:leading-snug text-neutral-800 font-normal">
           <p>{descriptor}</p>
         </div>
 
-        {/* Nav + meta: social + contact + status (cols 7–12) */}
+        {/* Nav + contact (cols 7–12) */}
         <div className="md:col-span-6 md:col-start-7 flex flex-col gap-3 md:gap-4 md:items-end text-xs md:text-sm text-neutral-900">
           {/* Desktop nav in top-right */}
           <nav className="hidden md:block">
@@ -65,7 +65,7 @@ export default function SiteHeader() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group text-xs md:text-[25px] font-[700] leading-none tracking-normal md:tracking-[-0.025em]"
+                    className="group text-[14px] sm:text-[18px] md:text-[22px] lg:text-[25px] font-[700] leading-none tracking-[-0.03em]"
                   >
                     <span className="relative inline-block">
                       <span>{item.label}</span>
@@ -82,102 +82,88 @@ export default function SiteHeader() {
             </ul>
           </nav>
 
-          {/* Buttons row (email + instagram) */}
-          <div className="flex flex-col gap-2 md:gap-2 md:items-end">
+          {/* Email + Instagram as smaller text links */}
+          <div className="flex flex-col gap-1 md:gap-1 md:items-end text-right">
             <a
               href="mailto:studio@elxsis.com"
-              className="inline-flex items-center rounded-full border border-neutral-900 px-3 py-1.5
-                         text-[11px] md:text-xs font-[600] uppercase tracking-[0.08em]
-                         text-neutral-900 bg-white
-                         transition-colors duration-200
-                         hover:bg-pink-500 hover:border-pink-600 hover:text-white"
+              className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
             >
-              email.{" "}
-              <span className="ml-1 normal-case font-[400]">
-                studio@elxsis.com
-              </span>
+              Email:{" "}
+              <span className="font-[400]">studio@elxsis.com</span>
             </a>
 
             <a
               href="https://instagram.com/elx_sis"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center rounded-full border border-neutral-900 px-3 py-1.5
-                         text-[11px] md:text-xs font-[600] uppercase tracking-[0.08em]
-                         text-neutral-900 bg-white
-                         transition-colors duration-200
-                         hover:bg-pink-500 hover:border-pink-600 hover:text-white"
+              className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
             >
-              instagram:{" "}
-              <span className="ml-1 normal-case font-[400]">@elx_sis</span>
+              Instagram:{" "}
+              <span className="font-[400]">@elx_sis</span>
             </a>
           </div>
+        </div>
+      </div>
 
-          {/* Status label + line */}
-          <div className="flex flex-col md:items-end gap-1">
-            <span className="uppercase tracking-[0.18em] text-[0.65rem] text-neutral-900 font-[600]">
-              status
-            </span>
-            <span className="text-neutral-900 text-xs md:text-sm font-[400]">
-              {statusLine}
-            </span>
-          </div>
+      {/* Status bar: full-width row below header */}
+      <div className="bg-neutral-900 text-white">
+        <div className="mx-auto max-w-[1440px] px-4 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
+          <span className="uppercase tracking-[0.18em] text-[0.65rem] md:text-xs font-[600]">
+            status
+          </span>
+          <span className="text-[11px] md:text-sm font-[400]">
+            {statusLine}
+          </span>
         </div>
       </div>
 
       {/* Mobile full-width overlay menu that replaces the header area */}
       {mobileOpen && (
-        <div className="absolute inset-0 bg-pink-500 text-neutral-900 md:hidden">
-          <div className="mx-auto max-w-[1440px] h-full px-4 lg:px-8 py-6 flex flex-col justify-between">
-            {/* Top row: logo left */}
-            <div className="flex items-start justify-between">
+        <div className="absolute inset-0 bg-neutral-900 text-white md:hidden">
+          <div className="mx-auto max-w-[1440px] h-full px-4 lg:px-8 py-6 relative">
+            {/* Top: logo left, menu + contact right */}
+            <div className="flex items-start justify-between gap-6">
               <Link href="/" onClick={() => setMobileOpen(false)}>
-                <ElxsisLogo className="h-7 w-auto text-neutral-900" />
+                <ElxsisLogo className="h-7 w-auto text-white" />
               </Link>
-            </div>
 
-            {/* Middle: menu items on the right, stacked */}
-            <div className="flex justify-between gap-6">
-              <div /> {/* empty left column to echo logo column */}
-              <div className="text-right space-y-1">
-                {navItems.map((item) => (
-                  <div key={item.href}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="text-lg font-[700] uppercase tracking-[0.16em] leading-tight underline underline-offset-4"
-                    >
-                      {item.label}
-                    </Link>
-                  </div>
-                ))}
+              <div className="flex flex-col items-end text-right gap-3">
+                {/* Menu items */}
+                <div className="space-y-1">
+                  {navItems.map((item) => (
+                    <div key={item.href}>
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="text-[16px] sm:text-[18px] font-[700] tracking-[-0.03em] leading-tight underline underline-offset-4"
+                      >
+                        {item.label}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Instagram + email directly under menu, smaller */}
+                <div className="flex flex-col items-end gap-1">
+                  <a
+                    href="https://instagram.com/elx_sis"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[12px] sm:text-[13px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-500 hover:decoration-white"
+                  >
+                    Instagram:{" "}
+                    <span className="font-[400]">@elx_sis</span>
+                  </a>
+
+                  <a
+                    href="mailto:studio@elxsis.com"
+                    className="text-[12px] sm:text-[13px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-500 hover:decoration-white"
+                  >
+                    Email:{" "}
+                    <span className="font-[400]">studio@elxsis.com</span>
+                  </a>
+                </div>
               </div>
-            </div>
-
-            {/* Bottom: instagram + email */}
-            <div className="flex items-end justify-between gap-4">
-              <a
-                href="https://instagram.com/elx_sis"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center rounded-full border border-neutral-900 px-3 py-1.5
-                           text-[11px] font-[600] uppercase tracking-[0.08em]
-                           text-neutral-900 bg-pink-500
-                           transition-colors duration-200
-                           hover:bg-neutral-900 hover:border-neutral-900 hover:text-pink-500"
-              >
-                instagram:{" "}
-                <span className="ml-1 normal-case font-[400]">@elx_sis</span>
-              </a>
-
-              <a
-                href="mailto:studio@elxsis.com"
-                className="text-[11px] leading-snug text-neutral-900 text-right"
-              >
-                studio@elxsis.com
-                <br />
-                {/* optional second line if you want later */}
-              </a>
             </div>
 
             {/* Close arrow bottom-right */}

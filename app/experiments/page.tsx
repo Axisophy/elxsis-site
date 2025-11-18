@@ -74,7 +74,7 @@ export default function ExperimentsPage() {
   return (
     <main className="mx-auto max-w-[1440px] px-4 lg:px-8 py-10 lg:py-16">
       <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
-        <h1 className="text-xl md:text-5xl tracking-[0.18em]  text-neutral-900 font-[700] tracking-normal md:tracking-[-0.025em]">
+        <h1 className="text-xl md:text-5xl  text-neutral-900 font-[700] tracking-[-0.025em]">
           Experiments
         </h1>
         <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
@@ -110,7 +110,7 @@ export default function ExperimentsPage() {
             >
               {/* Top row: title + status */}
               <div className="flex items-start justify-between gap-4">
-                <h2 className="text-sm md:text-8xl font-[700] text-neutral-900">
+                <h2 className="text-sm md:text-8xl font-[700] text-neutral-900 tracking-[-0.025em]">
                   {exp.title}
                 </h2>
                 <span className="text-[10px] uppercase tracking-[0.16em] px-2 py-1 rounded-full border border-neutral-300 text-neutral-600">
