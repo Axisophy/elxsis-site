@@ -83,8 +83,8 @@ export default function SiteHeader() {
           </nav>
 
           {/* Email + Instagram as smaller text links */}
-          <div className="flex flex-col gap-1 md:gap-1 md:items-end text-right">
-            <a
+          <div className="hidden md:flex flex-col gap-1 md:gap-1 md:items-end text-right">
+          <a
               href="mailto:studio@elxsis.com"
               className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
             >
