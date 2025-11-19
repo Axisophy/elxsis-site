@@ -23,8 +23,8 @@ export default function SiteHeader() {
   return (
     <header className="w-full bg-white relative">
       {/* Top: 12-column grid (normal header) */}
-      <div className="mx-auto max-w-[1440px] px-4 lg:px-8 py-6 md:py-12 lg:py-16 min-h-[220px] lg:min-h-[260px] grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-8">        {/* Logo + micro-title (cols 1–3) */}
-        <div className="md:col-span-3 md:col-start-1 flex flex-col gap-2">
+      <div className="w-full px-4 lg:px-8 py-12 lg:py-16 grid grid-cols-1 md:grid-cols-12 gap-x-6 gap-y-8">
+      <div className="md:col-span-3 md:col-start-1 flex flex-col gap-2">
           <div className="flex items-start justify-between md:block">
             <Link href="/" className="inline-flex items-center gap-2">
               <ElxsisLogo className="h-7 md:h-9 w-auto text-neutral-900" />
@@ -104,11 +104,11 @@ export default function SiteHeader() {
 
       {/* Status bar: full-width row below header */}
       <div className="bg-neutral-900 text-white">
-        <div className="mx-auto max-w-[1440px] px-4 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
-          <span className="uppercase tracking-[0.18em] text-[0.65rem] md:text-xs font-[600]">
-            status
-          </span>
+        <div className="w-full px-4 lg:px-8 py-2 flex items-center justify-end">
           <span className="text-[11px] md:text-sm font-[400]">
+            <span className=" tracking-[-0.025em] text-[11px] md:text-sm font-[700] mr-2">
+              Status:
+            </span>
             {statusLine}
           </span>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import SiteHeader from "@/components/layout/SiteHeader";
+import SiteFooter from "@/components/layout/SiteFooter";
 
 export const metadata: Metadata = {
   title: "Elxsis",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-white text-neutral-900 antialiased">
         <SiteHeader />
         <main>{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );
