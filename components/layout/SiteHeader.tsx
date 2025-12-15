@@ -7,14 +7,13 @@ import { ElxsisLogo } from "@/components/icons/ElxsisLogo";
 const descriptor =
   "Elxsis works at the intersection of computation and scientific imagination, developing visual research across dynamical systems, astrophysical data, quantum structures, and emergent mathematical forms. Our work combines scientific modelling with high-resolution computational design to reveal new aesthetic and structural possibilities.";
 
-const statusLine = "Running a 6-seed, 945M-step attractor test.";
-
 const navItems = [
+  { href: "/projects", label: "Projects." },
   { href: "/experiments", label: "Experiments." },
   { href: "/process", label: "Process." },
   { href: "/about", label: "About." },
-  { href: "/available-works", label: "Available Works." },
-  { href: "/contact", label: "Contact." },
+  { href: "/available-works", label: "Works." },
+  { href: "/collaborate", label: "Collaborate." },
 ];
 
 export default function SiteHeader() {
@@ -99,18 +98,6 @@ export default function SiteHeader() {
               Instagram: <span className="font-[400]">@elx_sis</span>
             </a>
           </div>
-        </div>
-      </div>
-
-      {/* Status bar: full-width row below header */}
-      <div className="bg-neutral-900 text-white">
-        <div className="w-full px-4 lg:px-8 py-2 flex items-center justify-end">
-          <span className="text-[11px] md:text-sm font-[400]">
-            <span className=" tracking-[-0.025em] text-[11px] md:text-sm font-[700] mr-2">
-              Status:
-            </span>
-            {statusLine}
-          </span>
         </div>
       </div>
 

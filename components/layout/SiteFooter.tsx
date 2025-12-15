@@ -29,6 +29,14 @@ export default function SiteFooter() {
               <ul className="space-y-1 text-sm md:text-base">
                 <li>
                   <Link
+                    href="/projects"
+                    className="font-[700] tracking-[-0.025em] hover:underline underline-offset-4"
+                  >
+                    Projects.
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/experiments"
                     className="font-[700] tracking-[-0.025em] hover:underline underline-offset-4"
                   >
@@ -56,15 +64,15 @@ export default function SiteFooter() {
                     href="/available-works"
                     className="font-[700] tracking-[-0.025em] hover:underline underline-offset-4"
                   >
-                    Available works.
+                    Works.
                   </Link>
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    href="/collaborate"
                     className="font-[700] tracking-[-0.025em] hover:underline underline-offset-4"
                   >
-                    Contact.
+                    Collaborate.
                   </Link>
                 </li>
               </ul>

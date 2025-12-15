@@ -3,12 +3,21 @@
 import { useState } from "react";
 import { PageTitle } from "@/components/typography";
 
+type BehindTheWork = {
+  relatedWorkUrl?: string;
+  relatedWorkLabel?: string;
+  // TODO: Add actual image paths when available
+  images?: string[];
+  nextSteps?: string[];
+};
+
 type Experiment = {
   slug: string;
   title: string;
   tags: string[];
   status: "in-progress" | "prototype" | "ready" | "speculative";
   summary: string;
+  behind?: BehindTheWork;
 };
 
 const experiments: Experiment[] = [
@@ -19,6 +28,11 @@ const experiments: Experiment[] = [
     status: "in-progress",
     summary:
       "Layered Lorenz trajectories rendered as dense vector fields, exploring seeding strategies, camera paths, and colour systems for future motion pieces and prints.",
+    behind: {
+      // Phase-space / attractor study – related work link
+      relatedWorkUrl: "https://axisophy.com/products/phase-portrait-005-1",
+      relatedWorkLabel: "Related work: Phase Portrait 005",
+    },
   },
   {
     slug: "aizawa-motion-planes",
@@ -27,6 +41,23 @@ const experiments: Experiment[] = [
     status: "prototype",
     summary:
       "Aizawa attractor cross-sections and orbit bundles, designed as a series of motion planes that can be recombined into longer sequences or interactive views.",
+    behind: {
+      // Phase-space / attractor study – related work link
+      relatedWorkUrl: "https://axisophy.com/products/phase-portrait-005-1",
+      relatedWorkLabel: "Related work: Phase Portrait 005",
+    },
+  },
+  {
+    slug: "weyl-symmetries-grid",
+    title: "Weyl symmetries grid",
+    tags: ["algebraic structures", "print series"],
+    status: "ready",
+    summary:
+      "High-resolution visualisations of Weyl group symmetries arranged as a modular grid, designed as a bridge between pure mathematics and large-format print editions.",
+    behind: {
+      relatedWorkUrl: "https://axisophy.com/products/weyl-symmetries-002-2",
+      relatedWorkLabel: "Related work: Weyl Symmetries 002",
+    },
   },
   {
     slug: "n-body-orbit-sketches",
@@ -43,6 +74,23 @@ const experiments: Experiment[] = [
     status: "ready",
     summary:
       "Variations on Hertzsprung–Russell diagrams and related Gaia-derived maps, tuned for large-format print with emphasis on density, gradients, and legibility.",
+    behind: {
+      // TODO: Add actual image paths when available
+      images: [
+        "placeholder-1.jpg",
+        "placeholder-2.jpg",
+        "placeholder-3.jpg",
+        "placeholder-4.jpg",
+        "placeholder-5.jpg",
+        "placeholder-6.jpg",
+      ],
+      // TODO: Replace with actual next steps
+      nextSteps: [
+        "Placeholder next step 1",
+        "Placeholder next step 2",
+        "Placeholder next step 3",
+      ],
+    },
   },
   {
     slug: "quantum-hydrogen-fields",
@@ -129,10 +177,67 @@ export default function ExperimentsPage() {
                 ))}
               </div>
 
-              {/* Expandable summary */}
+              {/* Expandable summary + behind the work */}
               {isOpen && (
-                <div className="mt-3 text-xs md:text-sm text-neutral-700 leading-relaxed">
-                  {exp.summary}
+                <div className="mt-3 space-y-4">
+                  <p className="text-xs md:text-sm text-neutral-700 leading-relaxed">
+                    {exp.summary}
+                  </p>
+
+                  {/* Behind the work section */}
+                  {exp.behind && (
+                    <div className="pt-3 border-t border-neutral-100 space-y-3">
+                      {/* Related work link */}
+                      {exp.behind.relatedWorkUrl && (
+                        <a
+                          href={exp.behind.relatedWorkUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-block text-xs md:text-sm text-neutral-600 underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
+                        >
+                          {exp.behind.relatedWorkLabel || "Related work →"}
+                        </a>
+                      )}
+
+                      {/* Image gallery placeholder */}
+                      {exp.behind.images && exp.behind.images.length > 0 && (
+                        <div className="space-y-2">
+                          <p className="text-[10px] uppercase tracking-[0.14em] text-neutral-500">
+                            Gallery
+                          </p>
+                          {/* TODO: Replace with actual images */}
+                          <div className="grid grid-cols-3 gap-2">
+                            {exp.behind.images.map((img, i) => (
+                              <div
+                                key={i}
+                                className="aspect-square bg-neutral-100 flex items-center justify-center text-neutral-400 text-[10px]"
+                              >
+                                {/* TODO: Add real image */}
+                                {i + 1}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Next steps */}
+                      {exp.behind.nextSteps && exp.behind.nextSteps.length > 0 && (
+                        <div className="space-y-2">
+                          <p className="text-[10px] uppercase tracking-[0.14em] text-neutral-500">
+                            Next steps
+                          </p>
+                          <ul className="space-y-1 text-xs text-neutral-600">
+                            {exp.behind.nextSteps.map((step, i) => (
+                              <li key={i} className="flex items-start gap-2">
+                                <span className="text-neutral-400">–</span>
+                                <span>{step}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </button>

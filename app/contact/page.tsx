@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageTitle } from "@/components/typography";
 
 export default function ContactPage() {
@@ -6,8 +7,16 @@ export default function ContactPage() {
       <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
         <PageTitle>Contact</PageTitle>
         <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
-          For commissions, collaborations, institutional projects, or enquiries
-          about existing work, please email{" "}
+          For collaboration opportunities, current invitations, and how to
+          propose a project, see the{" "}
+          <Link href="/collaborate" className="underline underline-offset-4">
+            Collaborate
+          </Link>{" "}
+          page.
+        </p>
+        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
+          For commissions, institutional projects, or general enquiries about
+          existing work, please email{" "}
           <a
             href="mailto:studio@elxsis.com"
             className="underline underline-offset-4"
