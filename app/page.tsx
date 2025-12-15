@@ -24,13 +24,61 @@ export default function HomePage() {
         <header className="max-w-3xl space-y-4 mb-10 lg:mb-14">
           <PageTitle>Elxsis</PageTitle>
           <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
-            Elxsis is a computational art and research studio working with
-            dynamical systems, astrophysical data, quantum structures, and other
-            scientific models. This site will gradually collect experiments,
-            motion studies, and large-scale print work, alongside notes on
-            process and collaborations.
+            Elxsis works at the intersection of computation and scientific
+            imagination, developing visual research across dynamical systems,
+            astrophysical data, quantum structures, and emergent mathematical
+            forms. The studio treats models, simulations, and datasets as raw
+            material, not as content to be illustrated, but as places to look
+            for structure, behaviour, and surprise.
+          </p>
+          <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
+            Some experiments begin as a simple rule-set and end as a cinematic
+            field. Others start with a scientific instrument or catalogue and
+            become a new kind of map. Across all of it, the aim is the same:
+            high-resolution computational design used with restraint and care,
+            until the underlying system becomes legible and strange in the best
+            way, and the work holds up as an object, a loop, or a room-scale
+            image.
           </p>
         </header>
+
+        {/* Current focus block */}
+        <section className="mb-10 lg:mb-14">
+          <div className="flex items-baseline justify-between gap-4 mb-4">
+            <h2 className="text-lg md:text-3xl text-neutral-900 font-[700] tracking-[-0.025em]">
+              Current focus
+            </h2>
+          </div>
+          <Link
+            href="/projects/motion-studies-for-invisible-systems"
+            className="block border border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors"
+          >
+            <h3 className="text-lg md:text-4xl lg:text-5xl font-[700] tracking-[-0.025em] text-neutral-900">
+              Motion Studies for Invisible Systems
+            </h3>
+            <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
+              Motion Studies for Invisible Systems is a new moving-image
+              practice built from mathematical dynamics. It focuses on systems
+              that reveal themselves through time: strange attractors that
+              condense into dense phase-space clouds, cellular automata that
+              behave like living surfaces, and complex function fields that act
+              as transformation maps.
+            </p>
+            <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
+              The work is being developed as a small suite of high-resolution
+              film studies with strict formal rules: consistent framing,
+              controlled pacing, loop logic, and a clear graphic language for
+              density, line, and drift. The plan is to produce three finished
+              films and a compact microsite that shows selected frames and short
+              process notes, then test the presentation publicly through a
+              prototype screening, using audience response to refine the final
+              form.
+            </p>
+            <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-neutral-500">
+              View project →
+            </p>
+          </Link>
+        </section>
 
         {/* Featured experiments */}
         <section>
