@@ -4,8 +4,7 @@ import { useState } from "react";
 import { PageTitle } from "@/components/typography";
 
 type BehindTheWork = {
-  relatedWorkUrl?: string;
-  relatedWorkLabel?: string;
+  related?: { href: string; label: string }[];
   // TODO: Add actual image paths when available
   images?: string[];
   nextSteps?: string[];
@@ -58,54 +57,17 @@ const experiments: Experiment[] = [
     summary:
       "We are building a short MXWLL Originals film: a 20-second, seamless 4K loop that treats a Lorenz attractor as a sculptural object rather than a plot. The aesthetic is black ink on white, with clean, deliberate linework and no glossy CGI cues. The Lorenz system is not periodic, so the loop is created by making the presentation periodic. Camera motion and the portion of the trajectory that is revealed return to the same state at the loop point. To reduce shimmer in thin animated linework, we render a 6K master sequence and downsample to 4K. The workflow is staged: seam-check stills, then a 60-frame micro-loop, then the full 600-frame render once framing and tone are locked.",
     behind: {
-      relatedWorkUrl: "https://axisophy.com/products/phase-portrait-005-1",
-      relatedWorkLabel: "Related work: Phase Portrait 005",
+      related: [
+        {
+          href: "https://axisophy.com/products/phase-portrait-005-1",
+          label: "Related work: Phase Portrait 005",
+        },
+      ],
       nextSteps: [
         "Final line weight and tone adjustments",
         "Full 4K delivery render",
       ],
     },
-  },
-  {
-    slug: "aizawa-motion-planes",
-    title: "Aizawa motion planes",
-    tags: ["dynamical systems", "attractors"],
-    stage: "Seeding",
-    type: "Still study",
-    format: "Print",
-    featuredRank: 4,
-    summary:
-      "Aizawa attractor cross-sections and orbit bundles, designed as a series of motion planes that can be recombined into longer sequences or interactive views.",
-    behind: {
-      relatedWorkUrl: "https://axisophy.com/products/phase-portrait-005-1",
-      relatedWorkLabel: "Related work: Phase Portrait 005",
-    },
-  },
-  {
-    slug: "weyl-symmetries-grid",
-    title: "Weyl symmetries grid",
-    tags: ["algebraic structures", "print series"],
-    stage: "Seeding",
-    type: "Still study",
-    format: "Print",
-    featuredRank: 3,
-    summary:
-      "High-resolution visualisations of Weyl group symmetries arranged as a modular grid, designed as a bridge between pure mathematics and large-format print editions.",
-    behind: {
-      relatedWorkUrl: "https://axisophy.com/products/weyl-symmetries-002-2",
-      relatedWorkLabel: "Related work: Weyl Symmetries 002",
-    },
-  },
-  {
-    slug: "n-body-orbit-sketches",
-    title: "N-body orbit sketches",
-    tags: ["n-body", "simulation", "gravity"],
-    stage: "Seeding",
-    type: "System sketch",
-    format: "Screen",
-    featuredRank: 5,
-    summary:
-      "Low-resolution gravitational n-body tests focusing on orbit pattern aesthetics rather than strict physical realism, intended as a foundation for future collaborations.",
   },
   {
     slug: "gaia-hr-maps",
@@ -136,13 +98,59 @@ const experiments: Experiment[] = [
     },
   },
   {
+    slug: "weyl-symmetries-grid",
+    title: "Weyl symmetries grid",
+    tags: ["algebraic structures", "print series"],
+    stage: "Seeding",
+    type: "Still study",
+    format: "Print",
+    featuredRank: 3,
+    summary:
+      "High-resolution visualisations of Weyl group symmetries arranged as a modular grid, designed as a bridge between pure mathematics and large-format print editions.",
+    behind: {
+      related: [
+        {
+          href: "https://axisophy.com/products/weyl-symmetries-002-2",
+          label: "Related work: Weyl Symmetries 002",
+        },
+      ],
+    },
+  },
+  {
+    slug: "aizawa-motion-planes",
+    title: "Aizawa motion planes",
+    tags: ["dynamical systems", "attractors"],
+    stage: "Seeding",
+    type: "Still study",
+    format: "Print",
+    summary:
+      "Aizawa attractor cross-sections and orbit bundles, designed as a series of motion planes that can be recombined into longer sequences or interactive views.",
+    behind: {
+      related: [
+        {
+          href: "https://axisophy.com/products/phase-portrait-005-1",
+          label: "Related work: Phase Portrait 005",
+        },
+      ],
+    },
+  },
+  {
+    slug: "n-body-orbit-sketches",
+    title: "N-body orbit sketches",
+    tags: ["n-body", "simulation", "gravity"],
+    stage: "Seeding",
+    type: "System sketch",
+    format: "Screen",
+    summary:
+      "Low-resolution gravitational n-body tests focusing on orbit pattern aesthetics rather than strict physical realism, intended as a foundation for future collaborations.",
+  },
+  {
     slug: "quantum-hydrogen-fields",
     title: "Quantum hydrogen fields",
     tags: ["quantum", "wavefunctions"],
     stage: "Seeding",
     type: "Still study",
     format: "Print",
-    featuredRank: 6,
     summary:
       "Scalar fields and isosurfaces derived from hydrogenic wavefunctions, designed as both static depth fields and potential 3D animation material.",
   },
@@ -153,7 +161,6 @@ const experiments: Experiment[] = [
     stage: "Future",
     type: "Dataset map",
     format: "Screen",
-    featuredRank: 7,
     summary:
       "Early visual sketches of three-flavour neutrino oscillation probabilities, mapping parameter spaces and path-dependent transitions into layered visual structures.",
   },
@@ -200,6 +207,8 @@ function ExperimentCard({
     <button
       type="button"
       onClick={onToggle}
+      aria-expanded={isOpen}
+      aria-controls={`exp-${exp.slug}`}
       className={[
         "w-full text-left px-4 md:px-6 py-4 md:py-5",
         "transition-colors duration-150",
@@ -235,7 +244,7 @@ function ExperimentCard({
 
       {/* Expandable summary + behind the work */}
       {isOpen && (
-        <div className="mt-3 space-y-4">
+        <div id={`exp-${exp.slug}`} className="mt-3 space-y-4">
           <p className="text-xs md:text-sm text-neutral-700 leading-relaxed">
             {exp.summary}
           </p>
@@ -243,16 +252,22 @@ function ExperimentCard({
           {/* Behind the work section */}
           {exp.behind && (
             <div className="pt-3 border-t border-neutral-100 space-y-3">
-              {/* Related work link */}
-              {exp.behind.relatedWorkUrl && (
-                <a
-                  href={exp.behind.relatedWorkUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-block text-xs md:text-sm text-neutral-600 underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
-                >
-                  {exp.behind.relatedWorkLabel || "Related work →"}
-                </a>
+              {/* Related work links */}
+              {exp.behind.related && exp.behind.related.length > 0 && (
+                <div className="flex flex-wrap gap-3">
+                  {exp.behind.related.map((link, i) => (
+                    <a
+                      key={i}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="inline-block text-xs md:text-sm text-neutral-600 underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               )}
 
               {/* Image gallery placeholder */}
@@ -307,7 +322,7 @@ export default function ExperimentsPage() {
     <main className="mx-auto px-4 lg:px-8 py-10 lg:py-16">
       <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
         <PageTitle>Experiments</PageTitle>
-        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
+        <p className="text-[14px] md:text-[16px] leading-relaxed text-neutral-900">
           A working catalogue of ongoing and completed experiments, from
           dynamical systems and attractors to astrophysical data and quantum
           structures.

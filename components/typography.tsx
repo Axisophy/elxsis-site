@@ -9,7 +9,7 @@ type HeadingProps = {
     return (
       <h1
         className={
-          "text-xl md:text-5xl text-neutral-900 font-[700] tracking-[-0.025em] " +
+          "text-5xl md:text-7xl lg:text-8xl text-neutral-900 font-[700] tracking-[-0.025em] " +
           className
         }
       >
