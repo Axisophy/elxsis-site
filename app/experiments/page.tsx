@@ -4,8 +4,8 @@ import { useState } from "react";
 import { PageTitle } from "@/components/typography";
 
 type BehindTheWork = {
+  note?: string;
   related?: { href: string; label: string }[];
-  // TODO: Add actual image paths when available
   images?: string[];
   nextSteps?: string[];
 };
@@ -80,34 +80,26 @@ const experiments: Experiment[] = [
     summary:
       "Variations on Hertzsprung-Russell diagrams and related Gaia-derived maps, tuned for large-format print with emphasis on density, gradients, and legibility.",
     behind: {
-      // TODO: Add actual image paths when available
-      images: [
-        "placeholder-1.jpg",
-        "placeholder-2.jpg",
-        "placeholder-3.jpg",
-        "placeholder-4.jpg",
-        "placeholder-5.jpg",
-        "placeholder-6.jpg",
-      ],
-      // TODO: Replace with actual next steps
       nextSteps: [
-        "Placeholder next step 1",
-        "Placeholder next step 2",
-        "Placeholder next step 3",
+        "Produce three final stills with consistent tone and margins (square, wide, portrait)",
+        "Test density transforms (log vs asinh) to preserve faint structures",
+        "Build one short animated HR drift study as a loop test",
+        "Pair HR density with a companion sky distribution map",
       ],
     },
   },
   {
     slug: "weyl-symmetries-grid",
-    title: "Weyl symmetries grid",
+    title: "Weyl Symmetries series",
     tags: ["algebraic structures", "print series"],
     stage: "Seeding",
     type: "Still study",
     format: "Print",
     featuredRank: 3,
     summary:
-      "High-resolution visualisations of Weyl group symmetries arranged as a modular grid, designed as a bridge between pure mathematics and large-format print editions.",
+      "High-resolution studies built from projections of the E8 Weyl symmetry structure. Each image begins with a fixed configuration and a chosen projection seed, then resolves as a dense field of edges where colour encodes angular change across the projection. The goal is a repeatable series of distinct works rather than a single definitive view.",
     behind: {
+      note: "The series is controlled through a small set of parameters that affect structure and tone, including projection choice, edge selection, line weight, opacity, and response curves. Outputs are designed as square large-format works suitable for print and editioning. Typical output uses 240 points and 7,140 edges, rendered as a square large-format vector file.",
       related: [
         {
           href: "https://axisophy.com/products/weyl-symmetries-002-2",
@@ -252,6 +244,13 @@ function ExperimentCard({
           {/* Behind the work section */}
           {exp.behind && (
             <div className="pt-3 border-t border-neutral-100 space-y-3">
+              {/* Behind the work note */}
+              {exp.behind.note && (
+                <p className="text-xs md:text-sm text-neutral-700 leading-relaxed">
+                  {exp.behind.note}
+                </p>
+              )}
+
               {/* Related work links */}
               {exp.behind.related && exp.behind.related.length > 0 && (
                 <div className="flex flex-wrap gap-3">
