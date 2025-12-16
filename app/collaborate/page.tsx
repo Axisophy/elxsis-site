@@ -104,7 +104,7 @@ export default function CollaboratePage() {
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 text-sm text-neutral-700">
           {futureThreads.map((thread, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-neutral-400 mt-0.5">–</span>
+              <span className="text-neutral-400 mt-0.5">•</span>
               <span>{thread}</span>
             </li>
           ))}

@@ -39,7 +39,7 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
           <ul className="space-y-2 text-sm md:text-base text-neutral-700">
             {project.inScope.map((item, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="text-neutral-400 mt-0.5">–</span>
+                <span className="text-neutral-400 mt-0.5">•</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -52,7 +52,7 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
           <ul className="space-y-2 text-sm md:text-base text-neutral-700">
             {project.outputs.map((item, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="text-neutral-400 mt-0.5">–</span>
+                <span className="text-neutral-400 mt-0.5">•</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -73,7 +73,7 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
           <ul className="space-y-2 text-sm md:text-base text-neutral-700">
             {project.seeking.map((item, i) => (
               <li key={i} className="flex items-start gap-2">
-                <span className="text-neutral-400 mt-0.5">–</span>
+                <span className="text-neutral-400 mt-0.5">•</span>
                 <span>{item}</span>
               </li>
             ))}

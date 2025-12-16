@@ -229,7 +229,7 @@ export default function ExperimentsPage() {
                           <ul className="space-y-1 text-xs text-neutral-600">
                             {exp.behind.nextSteps.map((step, i) => (
                               <li key={i} className="flex items-start gap-2">
-                                <span className="text-neutral-400">–</span>
+                                <span className="text-neutral-400">•</span>
                                 <span>{step}</span>
                               </li>
                             ))}
