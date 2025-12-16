@@ -13,6 +13,11 @@ type BehindTheWork = {
 /*
  * Experiment label system (controlled vocabulary)
  *
+ * Slug policy:
+ *   - slug is a permanent identifier; do not change without providing redirects
+ *   - titles and summaries may change freely
+ *   - use aliases to map old slugs to the canonical one if a slug must change
+ *
  * Stage (fixed): "Shipping" | "Seeding" | "Future"
  *   - Shipping: actively being delivered
  *   - Seeding: in development or prototype
@@ -35,6 +40,7 @@ type BehindTheWork = {
  */
 type Experiment = {
   slug: string;
+  aliases?: string[];
   title: string;
   tags: string[];
   stage?: "Shipping" | "Seeding" | "Future";
@@ -45,6 +51,14 @@ type Experiment = {
   behind?: BehindTheWork;
 };
 
+/*
+ * TODO: If individual experiment pages are added later (/experiments/[slug]),
+ * implement redirects for any aliases using one of:
+ *   - next.config.js redirects (static)
+ *   - route handler with redirect() (dynamic)
+ *   - middleware (flexible)
+ * Use aliases to map old slugs to the canonical slug.
+ */
 const experiments: Experiment[] = [
   {
     slug: "lorenz-loop-mxwll",
