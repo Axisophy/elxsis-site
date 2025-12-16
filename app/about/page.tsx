@@ -33,15 +33,18 @@ export default function AboutPage() {
         {/* Simon Tyler bio */}
         <section>
           <SectionTitle className="mb-4">Simon Tyler</SectionTitle>
-          {/* TODO: Replace with final bio */}
           <div className="space-y-4 text-sm md:text-base text-neutral-700 leading-relaxed">
             <p>
-              Placeholder bio paragraph 1. Simon Tyler is a designer and artist
-              working with computational systems and scientific visualisation.
+              Elxsis is led by Simon Tyler, a UK-based designer, artist, and
+              illustrator. Since 2013 he has been developing research-led visual
+              work through Atomic Printworks, now Axisophy, alongside publishing
+              and illustration projects for Faber, Pavilion, and Laurence King.
             </p>
             <p>
-              Placeholder bio paragraph 2. Background, education, previous work,
-              and areas of interest.
+              Simon originally studied biochemistry and the history and
+              philosophy of science, and continues to approach image-making as
+              visual research, shaped as much by scientific curiosity as by
+              graphic design.
             </p>
           </div>
         </section>
