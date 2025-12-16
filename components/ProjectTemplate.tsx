@@ -7,7 +7,7 @@ export type ProjectData = {
   inScope: string[];
   outputs: string[];
   status: string;
-  seeking: string;
+  seeking: string[];
   images?: string[];
 };
 
@@ -20,9 +20,16 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
     <main className="mx-auto px-4 lg:px-8 py-10 lg:py-16">
       <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
         <PageTitle>{project.title}</PageTitle>
-        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
-          {project.summary}
-        </p>
+        <div className="space-y-4">
+          {project.summary.split("\n\n").map((para, i) => (
+            <p
+              key={i}
+              className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900"
+            >
+              {para}
+            </p>
+          ))}
+        </div>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl">
@@ -63,9 +70,14 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
         {/* Seeking */}
         <section>
           <SectionTitle className="mb-4">Seeking</SectionTitle>
-          <p className="text-sm md:text-base text-neutral-700">
-            {project.seeking}
-          </p>
+          <ul className="space-y-2 text-sm md:text-base text-neutral-700">
+            {project.seeking.map((item, i) => (
+              <li key={i} className="flex items-start gap-2">
+                <span className="text-neutral-400 mt-0.5">–</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       </div>
 
