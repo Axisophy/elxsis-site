@@ -15,7 +15,9 @@ type Experiment = {
   slug: string;
   title: string;
   tags: string[];
-  status: "in-progress" | "prototype" | "ready" | "speculative";
+  stage?: "Shipping" | "Seeding" | "Future";
+  type?: string;
+  format?: "Screen" | "Print" | "Installation";
   summary: string;
   behind?: BehindTheWork;
 };
@@ -25,7 +27,9 @@ const experiments: Experiment[] = [
     slug: "lorenz-loop-mxwll",
     title: "Lorenz Loop",
     tags: ["MXWLL Originals", "dynamical systems", "motion"],
-    status: "in-progress",
+    stage: "Shipping",
+    type: "Film loop",
+    format: "Screen",
     summary:
       "We are building a short MXWLL Originals film: a 20-second, seamless 4K loop that treats a Lorenz attractor as a sculptural object rather than a plot. The aesthetic is black ink on white, with clean, deliberate linework and no glossy CGI cues. The Lorenz system is not periodic, so the loop is created by making the presentation periodic. Camera motion and the portion of the trajectory that is revealed return to the same state at the loop point. To reduce shimmer in thin animated linework, we render a 6K master sequence and downsample to 4K. The workflow is staged: seam-check stills, then a 60-frame micro-loop, then the full 600-frame render once framing and tone are locked.",
     behind: {
@@ -41,11 +45,12 @@ const experiments: Experiment[] = [
     slug: "aizawa-motion-planes",
     title: "Aizawa motion planes",
     tags: ["dynamical systems", "attractors"],
-    status: "prototype",
+    stage: "Seeding",
+    type: "Still study",
+    format: "Print",
     summary:
       "Aizawa attractor cross-sections and orbit bundles, designed as a series of motion planes that can be recombined into longer sequences or interactive views.",
     behind: {
-      // Phase-space / attractor study – related work link
       relatedWorkUrl: "https://axisophy.com/products/phase-portrait-005-1",
       relatedWorkLabel: "Related work: Phase Portrait 005",
     },
@@ -54,7 +59,9 @@ const experiments: Experiment[] = [
     slug: "weyl-symmetries-grid",
     title: "Weyl symmetries grid",
     tags: ["algebraic structures", "print series"],
-    status: "ready",
+    stage: "Seeding",
+    type: "Still study",
+    format: "Print",
     summary:
       "High-resolution visualisations of Weyl group symmetries arranged as a modular grid, designed as a bridge between pure mathematics and large-format print editions.",
     behind: {
@@ -66,7 +73,9 @@ const experiments: Experiment[] = [
     slug: "n-body-orbit-sketches",
     title: "N-body orbit sketches",
     tags: ["n-body", "simulation", "gravity"],
-    status: "speculative",
+    stage: "Seeding",
+    type: "System sketch",
+    format: "Screen",
     summary:
       "Low-resolution gravitational n-body tests focusing on orbit pattern aesthetics rather than strict physical realism, intended as a foundation for future collaborations.",
   },
@@ -74,9 +83,11 @@ const experiments: Experiment[] = [
     slug: "gaia-hr-maps",
     title: "Gaia HR maps",
     tags: ["astrophysics", "data", "mapping"],
-    status: "ready",
+    stage: "Shipping",
+    type: "Dataset map",
+    format: "Screen",
     summary:
-      "Variations on Hertzsprung–Russell diagrams and related Gaia-derived maps, tuned for large-format print with emphasis on density, gradients, and legibility.",
+      "Variations on Hertzsprung-Russell diagrams and related Gaia-derived maps, tuned for large-format print with emphasis on density, gradients, and legibility.",
     behind: {
       // TODO: Add actual image paths when available
       images: [
@@ -99,7 +110,9 @@ const experiments: Experiment[] = [
     slug: "quantum-hydrogen-fields",
     title: "Quantum hydrogen fields",
     tags: ["quantum", "wavefunctions"],
-    status: "prototype",
+    stage: "Seeding",
+    type: "Still study",
+    format: "Print",
     summary:
       "Scalar fields and isosurfaces derived from hydrogenic wavefunctions, designed as both static depth fields and potential 3D animation material.",
   },
@@ -107,18 +120,22 @@ const experiments: Experiment[] = [
     slug: "neutrino-oscillation-maps",
     title: "Neutrino oscillation maps",
     tags: ["neutrinos", "oscillations"],
-    status: "speculative",
+    stage: "Future",
+    type: "Dataset map",
+    format: "Screen",
     summary:
       "Early visual sketches of three-flavour neutrino oscillation probabilities, mapping parameter spaces and path-dependent transitions into layered visual structures.",
   },
 ];
 
-const statusLabel: Record<Experiment["status"], string> = {
-  "in-progress": "In progress",
-  prototype: "Prototype",
-  ready: "Ready for commissions",
-  speculative: "Speculative study",
-};
+// Helper to build the stage label string
+function buildStageLabel(exp: Experiment): string {
+  const parts: string[] = [];
+  if (exp.stage) parts.push(exp.stage);
+  if (exp.type) parts.push(exp.type);
+  if (exp.format) parts.push(exp.format);
+  return parts.join(" · ");
+}
 
 export default function ExperimentsPage() {
   const [openSlug, setOpenSlug] = useState<string | null>(null);
@@ -158,15 +175,17 @@ export default function ExperimentsPage() {
                 .filter(Boolean)
                 .join(" ")}
             >
-              {/* Top row: title + status */}
-              <div className="flex items-start justify-between gap-4">
-                <h2 className="text-sm md:text-8xl font-[700] text-neutral-900 tracking-[-0.025em]">
-                  {exp.title}
-                </h2>
-                <span className="text-[10px] uppercase tracking-[0.16em] px-2 py-1 rounded-full border border-neutral-300 text-neutral-600">
-                  {statusLabel[exp.status]}
-                </span>
-              </div>
+              {/* Title */}
+              <h2 className="text-sm md:text-4xl font-[700] text-neutral-900 tracking-[-0.025em]">
+                {exp.title}
+              </h2>
+
+              {/* Stage label */}
+              {(exp.stage || exp.type || exp.format) && (
+                <p className="mt-1 text-[11px] tracking-[0.02em] text-neutral-500">
+                  {buildStageLabel(exp)}
+                </p>
+              )}
 
               {/* Tags row */}
               <div className="mt-2 flex flex-wrap gap-1.5">
