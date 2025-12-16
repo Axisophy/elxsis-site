@@ -11,16 +11,21 @@ export default function AboutPage() {
         {/* Studio statement */}
         <section>
           <SectionTitle className="mb-4">Studio statement</SectionTitle>
-          {/* TODO: Replace with final studio statement */}
           <div className="space-y-4 text-sm md:text-base text-neutral-700 leading-relaxed">
             <p>
-              Placeholder studio statement paragraph 1. Elxsis works at the
-              intersection of science, mathematics, and computational
-              image-making.
+              Elxsis works at the intersection of computation and scientific
+              imagination, developing visual research across dynamical systems,
+              astrophysical data, quantum structures, and emergent mathematical
+              forms. The studio treats models, simulations, and datasets as raw
+              material, looking for structure, behaviour, and surprise.
             </p>
             <p>
-              Placeholder studio statement paragraph 2. The studio develops both
-              self-initiated and commissioned projects.
+              Some work is developed for MXWLL, where experiments are published
+              as part of a living library of visual research. Other work is
+              developed for different contexts, including public screenings,
+              exhibitions, and collaborations with institutions and museums. The
+              aim is to build methods and works that can live comfortably on a
+              phone screen, a website, or in a room.
             </p>
           </div>
         </section>
@@ -44,27 +49,21 @@ export default function AboutPage() {
         {/* Related practices */}
         <section>
           <SectionTitle className="mb-4">Related practices</SectionTitle>
-          {/* TODO: Replace with actual related practices and links */}
           <div className="space-y-4 text-sm md:text-base text-neutral-700 leading-relaxed">
             <p>
-              Placeholder paragraph about related practices, affiliated studios,
-              or parallel work streams.
+              Elxsis is closely linked to MXWLL, a digital platform built to
+              present science with the care usually reserved for the best design
+              objects. In practice, Elxsis can function as a studio source for
+              computational experiments that are then published and evolved
+              through MXWLL.
             </p>
-            <ul className="space-y-2">
-              {/* TODO: Add actual links */}
-              <li className="flex items-start gap-2">
-                <span className="text-neutral-400 mt-0.5">–</span>
-                <span>Placeholder related practice 1</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-neutral-400 mt-0.5">–</span>
-                <span>Placeholder related practice 2</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-neutral-400 mt-0.5">–</span>
-                <span>Placeholder related practice 3</span>
-              </li>
-            </ul>
+            <p>
+              Elxsis also sits alongside Axisophy, which focuses on editioned
+              works and print-led releases. These are different outputs with
+              different audiences, but they share the same habits of work:
+              systems thinking, iteration, and a preference for things that are
+              built carefully rather than dressed up at the end.
+            </p>
           </div>
         </section>
       </div>
