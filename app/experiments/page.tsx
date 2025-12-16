@@ -11,6 +11,27 @@ type BehindTheWork = {
   nextSteps?: string[];
 };
 
+/*
+ * Experiment label system (controlled vocabulary)
+ *
+ * Stage (fixed): "Shipping" | "Seeding" | "Future"
+ *   - Shipping: actively being delivered
+ *   - Seeding: in development or prototype
+ *   - Future: planned or speculative
+ *
+ * Type (controlled):
+ *   - Film loop
+ *   - Still study
+ *   - Dataset map
+ *   - System sketch
+ *   - Prototype tool
+ *   - Installation test
+ *
+ * Format (controlled):
+ *   - Screen
+ *   - Print
+ *   - Installation
+ */
 type Experiment = {
   slug: string;
   title: string;
