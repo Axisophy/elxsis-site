@@ -57,22 +57,15 @@ export default function HomePage() {
               Motion Studies for Invisible Systems
             </h3>
             <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
-              Motion Studies for Invisible Systems is a new moving-image
-              practice built from mathematical dynamics. It focuses on systems
-              that reveal themselves through time: strange attractors that
-              condense into dense phase-space clouds, cellular automata that
-              behave like living surfaces, and complex function fields that act
-              as transformation maps.
+              Motion Studies for Invisible Systems is an ongoing set of
+              animation studies drawn from dynamical systems. It brings together
+              strange attractors, cellular automata, and complex fields, looking
+              for images that feel precise, readable, and slightly uncanny.
             </p>
             <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
-              The work is being developed as a small suite of high-resolution
-              film studies with strict formal rules: consistent framing,
-              controlled pacing, loop logic, and a clear graphic language for
-              density, line, and drift. The plan is to produce three finished
-              films and a compact microsite that shows selected frames and short
-              process notes, then test the presentation publicly through a
-              prototype screening, using audience response to refine the final
-              form.
+              The next phase is three finished pieces and a compact project page
+              with selected frames and short notes, followed by a prototype
+              screening to test presentation and gather feedback.
             </p>
             <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-neutral-500">
               View project →
