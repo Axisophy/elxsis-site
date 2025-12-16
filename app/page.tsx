@@ -93,15 +93,15 @@ export default function HomePage() {
             {/* Experiment 1 */}
             <article className="border border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors">
               <h3 className="text-lg md:text-4xl lg:text-5xl font-[700] tracking-[-0.025em] text-neutral-900">
-                Lorenz field study 01
+                Lorenz Loop
               </h3>
               <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
-                A family of Lorenz attractor trajectories rendered as dense
-                phase-space fields, exploring parameter drifts, seeding patterns,
-                and multi-axis motion paths for future animation.
+                A short MXWLL Originals film: a 20-second, seamless 4K loop that
+                treats a Lorenz attractor as a sculptural object rather than a
+                plot. Black ink on white, clean linework, no glossy CGI cues.
               </p>
               <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-neutral-500">
-                dynamical systems / motion test
+                MXWLL Originals / dynamical systems
               </p>
             </article>
 

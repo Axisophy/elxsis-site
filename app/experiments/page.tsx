@@ -22,16 +22,19 @@ type Experiment = {
 
 const experiments: Experiment[] = [
   {
-    slug: "lorenz-field-study-01",
-    title: "Lorenz field study 01",
-    tags: ["dynamical systems", "motion", "chaos"],
+    slug: "lorenz-loop-mxwll",
+    title: "Lorenz Loop",
+    tags: ["MXWLL Originals", "dynamical systems", "motion"],
     status: "in-progress",
     summary:
-      "Layered Lorenz trajectories rendered as dense vector fields, exploring seeding strategies, camera paths, and colour systems for future motion pieces and prints.",
+      "We are building a short MXWLL Originals film: a 20-second, seamless 4K loop that treats a Lorenz attractor as a sculptural object rather than a plot. The aesthetic is black ink on white, with clean, deliberate linework and no glossy CGI cues. The Lorenz system is not periodic, so the loop is created by making the presentation periodic. Camera motion and the portion of the trajectory that is revealed return to the same state at the loop point. To reduce shimmer in thin animated linework, we render a 6K master sequence and downsample to 4K. The workflow is staged: seam-check stills, then a 60-frame micro-loop, then the full 600-frame render once framing and tone are locked.",
     behind: {
-      // Phase-space / attractor study – related work link
       relatedWorkUrl: "https://axisophy.com/products/phase-portrait-005-1",
       relatedWorkLabel: "Related work: Phase Portrait 005",
+      nextSteps: [
+        "Final line weight and tone adjustments",
+        "Full 4K delivery render",
+      ],
     },
   },
   {
