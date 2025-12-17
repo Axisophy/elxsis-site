@@ -36,57 +36,51 @@ export const projects: ProjectMeta[] = [
   {
     slug: "stellar-cartographies",
     title: "Stellar Cartographies",
-    // TODO: Replace with final copy
-    cardSummary: "Placeholder summary for project card – astrophysical data mapping and visualisation.",
-    summary: "Placeholder summary paragraph. TODO: Write full project description covering the scope, goals, and approach of this stellar mapping project.",
+    cardSummary: "Studies built from astrophysical catalogues, focused on how large datasets can become readable, designed images.",
+    summary: "Stellar Cartographies is a set of studies built from astrophysical catalogues and derived maps, focused on how large datasets can become readable, designed images. The work is interested in density, structure, and scale, and in treating scientific plots as a kind of cartography rather than a chart.\n\nThe current anchor is a family of Gaia HR diagram maps and related views, tuned for legibility and tone, and developed with both screen presentation and print outcomes in mind. Over time, the project can expand into companion atlas views that connect stellar populations to position, motion, and selection effects.",
     inScope: [
-      // TODO: Replace with actual scope items
-      "Placeholder scope item 1",
-      "Placeholder scope item 2",
-      "Placeholder scope item 3",
+      "HR diagram density maps and variations",
+      "Companion 'atlas' views (sky distribution, motion, selection)",
+      "Controlled aesthetic treatments for legibility and hierarchy",
+      "Short loop studies where motion adds clarity",
     ],
     outputs: [
-      // TODO: Replace with actual outputs
-      "Placeholder output 1",
-      "Placeholder output 2",
-      "Placeholder output 3",
+      "A small set of finished atlas plates (stills)",
+      "A compact project page with selected frames and notes",
+      "Optional short loop studies for screen presentation",
+      "Documentation suitable for publication and collaboration",
     ],
-    // TODO: Replace with actual status
-    status: "Placeholder status – research phase",
-    // TODO: Replace with actual seeking items
+    status: "In development",
     seeking: [
-      "Placeholder seeking item 1",
-      "Placeholder seeking item 2",
+      "Astronomy collaborators open to light-touch consultation",
+      "Data partners or institutions interested in public-facing visual work",
+      "Opportunities for presentation in education or exhibition contexts",
     ],
-    // TODO: Add actual image paths
     images: [],
   },
   {
     slug: "symmetry-projections",
     title: "Symmetry Projections",
-    // TODO: Replace with final copy
-    cardSummary: "Placeholder summary for project card – mathematical symmetry structures visualised.",
-    summary: "Placeholder summary paragraph. TODO: Write full project description covering the scope, goals, and approach of this symmetry project.",
+    cardSummary: "High-resolution works from algebraic and geometric structures, using projection to turn abstract relationships into images.",
+    summary: "Symmetry Projections develops a series of high-resolution works from algebraic and geometric structures, using projection as a way to turn abstract relationships into images with weight, density, and clear internal logic.\n\nThe current focus is the Weyl Symmetries series, built from projections of E8 structure into a dense field of edges where colour and tone encode the behaviour of the projection. The wider aim is a coherent family of works that can exist as screen studies, exhibition loops, and large-format prints.",
     inScope: [
-      // TODO: Replace with actual scope items
-      "Placeholder scope item 1",
-      "Placeholder scope item 2",
-      "Placeholder scope item 3",
+      "Weyl Symmetries series (E8 projections and controlled variants)",
+      "Phase portrait and phase-space structure studies",
+      "Projection-driven work from higher-dimensional geometry",
+      "Series logic: consistent output rules across multiple images",
     ],
     outputs: [
-      // TODO: Replace with actual outputs
-      "Placeholder output 1",
-      "Placeholder output 2",
-      "Placeholder output 3",
+      "A set of finished high-resolution still works (series)",
+      "Selected process notes and parameter snapshots",
+      "Exhibition-ready screen studies where appropriate",
+      "Print editions where a thread resolves strongly",
     ],
-    // TODO: Replace with actual status
-    status: "Placeholder status – prototyping",
-    // TODO: Replace with actual seeking items
+    status: "In development",
     seeking: [
-      "Placeholder seeking item 1",
-      "Placeholder seeking item 2",
+      "Mathematical advisory input for public-facing framing (light-touch)",
+      "Exhibition or screening opportunities for projection-based screen work",
+      "Institutional partners interested in symmetry and visual communication",
     ],
-    // TODO: Add actual image paths
     images: [],
   },
 ];
