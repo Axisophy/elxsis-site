@@ -68,8 +68,17 @@ export default function CollaboratePage() {
         </p>
         <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
           If you are interested in publishing experiments digitally, many Elxsis
-          threads also feed into MXWLL, but Elxsis is equally interested in
-          screenings, installations, and institution-led projects.
+          threads also feed into{" "}
+          <a
+            href="https://mxwll.io"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-4"
+          >
+            MXWLL
+          </a>
+          , but Elxsis is equally interested in screenings, installations, and
+          institution-led projects.
         </p>
         <p className="text-sm text-neutral-600">
           For general enquiries, see{" "}

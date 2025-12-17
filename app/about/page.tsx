@@ -20,12 +20,21 @@ export default function AboutPage() {
               material, looking for structure, behaviour, and surprise.
             </p>
             <p>
-              Some work is developed for MXWLL, where experiments are published
-              as part of a living library of visual research. Other work is
-              developed for different contexts, including public screenings,
-              exhibitions, and collaborations with institutions and museums. The
-              aim is to build methods and works that can live comfortably on a
-              phone screen, a website, or in a room.
+              Some work is developed for{" "}
+              <a
+                href="https://mxwll.io"
+                target="_blank"
+                rel="noreferrer"
+                className="underline underline-offset-4"
+              >
+                MXWLL
+              </a>
+              , where experiments are published as part of a living library of
+              visual research. Other work is developed for different contexts,
+              including public screenings, exhibitions, and collaborations with
+              institutions and museums. The aim is to build methods and works
+              that can live comfortably on a phone screen, a website, or in a
+              room.
             </p>
           </div>
         </section>
