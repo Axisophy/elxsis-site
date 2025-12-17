@@ -165,6 +165,7 @@ const experiments: Experiment[] = [
     stage: "Seeding",
     type: "System sketch",
     format: "Screen",
+    featuredRank: 5,
     summary:
       "Low-resolution gravitational n-body tests focusing on orbit pattern aesthetics rather than strict physical realism, intended as a foundation for future collaborations.",
   },
@@ -175,6 +176,7 @@ const experiments: Experiment[] = [
     stage: "Seeding",
     type: "Still study",
     format: "Print",
+    featuredRank: 4,
     summary:
       "Scalar fields and isosurfaces derived from hydrogenic wavefunctions, designed as both static depth fields and potential 3D animation material.",
   },
@@ -185,6 +187,7 @@ const experiments: Experiment[] = [
     stage: "Future",
     type: "Dataset map",
     format: "Screen",
+    featuredRank: 6,
     summary:
       "Early visual sketches of three-flavour neutrino oscillation probabilities, mapping parameter spaces and path-dependent transitions into layered visual structures.",
   },
