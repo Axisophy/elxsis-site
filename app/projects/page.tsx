@@ -8,10 +8,16 @@ export default function ProjectsPage() {
     <main className="mx-auto px-4 lg:px-8 py-10 lg:py-16">
       <header className="max-w-3xl space-y-4 mb-8 lg:mb-12">
         <PageTitle>Projects</PageTitle>
-        {/* TODO: Replace with final intro copy */}
         <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
-          Placeholder intro paragraph. Current and upcoming research projects
-          from the studio.
+          Elxsis projects are longer-running threads that gather multiple
+          experiments into a coherent direction. Some outputs are designed for
+          MXWLL and online viewing, others are developed for screenings,
+          exhibitions, and institutional collaborations, and some resolve as
+          print editions.
+        </p>
+        <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
+          Each project page outlines what is in scope, what is being produced
+          next, and what kinds of partners would be useful at this stage.
         </p>
       </header>
 

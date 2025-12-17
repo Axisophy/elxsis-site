@@ -30,8 +30,10 @@ export const projects: ProjectMeta[] = [
       "Light-touch mathematical advice on public-facing framing",
       "Sound design or composition support for the final pieces",
     ],
-    // TODO: Add actual image paths
     images: [],
+    relatedExperiments: [
+      { label: "Lorenz Loop", slug: "lorenz-loop-mxwll" },
+    ],
   },
   {
     slug: "stellar-cartographies",
@@ -57,6 +59,9 @@ export const projects: ProjectMeta[] = [
       "Opportunities for presentation in education or exhibition contexts",
     ],
     images: [],
+    relatedExperiments: [
+      { label: "Gaia HR maps", slug: "gaia-hr-maps" },
+    ],
   },
   {
     slug: "symmetry-projections",
@@ -82,5 +87,8 @@ export const projects: ProjectMeta[] = [
       "Institutional partners interested in symmetry and visual communication",
     ],
     images: [],
+    relatedExperiments: [
+      { label: "Weyl Symmetries series", slug: "weyl-symmetries-grid" },
+    ],
   },
 ];

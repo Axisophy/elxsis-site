@@ -1,4 +1,5 @@
 // components/ProjectTemplate.tsx
+import Link from "next/link";
 import { PageTitle, SectionTitle } from "@/components/typography";
 
 export type ProjectData = {
@@ -9,6 +10,7 @@ export type ProjectData = {
   status: string;
   seeking: string[];
   images?: string[];
+  relatedExperiments?: { label: string; slug: string }[];
 };
 
 type ProjectTemplateProps = {
@@ -79,6 +81,25 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
             ))}
           </ul>
         </section>
+
+        {/* Related experiments */}
+        {project.relatedExperiments && project.relatedExperiments.length > 0 && (
+          <section>
+            <SectionTitle className="mb-4">Related experiments</SectionTitle>
+            <ul className="space-y-2 text-sm md:text-base">
+              {project.relatedExperiments.map((exp, i) => (
+                <li key={i}>
+                  <Link
+                    href={`/experiments?open=${exp.slug}`}
+                    className="text-neutral-700 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 transition-colors"
+                  >
+                    {exp.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
       </div>
 
       {/* Image gallery placeholder */}

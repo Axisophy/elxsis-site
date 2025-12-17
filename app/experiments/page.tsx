@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { PageTitle } from "@/components/typography";
 
@@ -234,6 +235,7 @@ function ExperimentCard({
 }) {
   return (
     <button
+      id={`card-${exp.slug}`}
       type="button"
       onClick={onToggle}
       aria-expanded={isOpen}
@@ -354,8 +356,22 @@ function ExperimentCard({
   );
 }
 
-export default function ExperimentsPage() {
-  const [openSlug, setOpenSlug] = useState<string | null>(null);
+function ExperimentsContent() {
+  const searchParams = useSearchParams();
+  const openParam = searchParams.get("open");
+  const allSlugs = experiments.map((e) => e.slug);
+  const validOpenParam = openParam && allSlugs.includes(openParam) ? openParam : null;
+  const [openSlug, setOpenSlug] = useState<string | null>(validOpenParam);
+
+  useEffect(() => {
+    if (validOpenParam) {
+      requestAnimationFrame(() => {
+        document
+          .getElementById(`card-${validOpenParam}`)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+  }, [validOpenParam]);
 
   return (
     <main className="mx-auto px-4 lg:px-8 py-10 lg:py-16">
@@ -412,5 +428,13 @@ export default function ExperimentsPage() {
         </section>
       )}
     </main>
+  );
+}
+
+export default function ExperimentsPage() {
+  return (
+    <Suspense fallback={null}>
+      <ExperimentsContent />
+    </Suspense>
   );
 }
