@@ -14,6 +14,7 @@ const navItems = [
   { href: "/about", label: "About." },
   { href: "/available-works", label: "Works." },
   { href: "/collaborate", label: "Collaborate." },
+  { href: "/contact", label: "Contact." },
 ];
 
 export default function SiteHeader() {

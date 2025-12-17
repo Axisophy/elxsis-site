@@ -75,6 +75,14 @@ export default function SiteFooter() {
                     Collaborate.
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="font-[700] tracking-[-0.025em] hover:underline underline-offset-4"
+                  >
+                    Contact.
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>
