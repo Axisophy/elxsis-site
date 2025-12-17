@@ -18,13 +18,15 @@ export default function HomePage() {
           className="object-cover"
           unoptimized
         />
+      </section>
+      <div className="px-4 lg:px-8 py-2">
         <Link
           href="/projects/symmetry-projections"
-          className="absolute bottom-4 left-4 text-[10px] tracking-[0.02em] text-white/70 hover:text-white transition-colors"
+          className="text-[11px] text-neutral-500 hover:text-neutral-700 transition-colors"
         >
-          From the Weyl Symmetries series
+          Weyl Symmetries series, E8 projection
         </Link>
-      </section>
+      </div>
 
       {/* Main homepage content */}
       <section className="mx-auto px-4 lg:px-8 py-10 lg:py-16">
