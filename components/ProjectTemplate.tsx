@@ -135,31 +135,27 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
         )}
       </div>
 
-      {/* Image gallery placeholder */}
-      <section className="mt-12 lg:mt-16">
-        <SectionTitle className="mb-6">Gallery</SectionTitle>
-        {/* TODO: Add image gallery component with actual project images */}
-        {/* TODO: Images should be placed in /public/projects/[project-slug]/ */}
-        {project.images && project.images.length > 0 ? (
+      {/* Image gallery */}
+      {project.images && project.images.length >= 2 && (
+        <section className="mt-12 lg:mt-16">
+          <SectionTitle className="mb-6">Gallery</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* TODO: Render actual images here */}
             {project.images.map((src, i) => (
-              <div
-                key={i}
-                className="aspect-square bg-neutral-100 flex items-center justify-center text-neutral-400 text-sm"
-              >
-                {/* TODO: Replace with next/image */}
-                Image placeholder {i + 1}
+              <div key={i} className="relative aspect-square">
+                <Image
+                  src={src}
+                  alt={`${project.title} gallery image ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  quality={95}
+                  sizes="(min-width: 1024px) 300px, (min-width: 768px) 50vw, 100vw"
+                  unoptimized
+                />
               </div>
             ))}
           </div>
-        ) : (
-          <div className="py-12 bg-neutral-50 flex items-center justify-center text-neutral-400 text-sm">
-            {/* TODO: Add project images */}
-            No images yet – gallery will appear here when images are added.
-          </div>
-        )}
-      </section>
+        </section>
+      )}
     </main>
   );
 }
