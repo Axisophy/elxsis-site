@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { PageTitle } from "@/components/typography";
 
 type BehindTheWork = {
@@ -71,6 +72,11 @@ const experiments: Experiment[] = [
     summary:
       "We are building a short MXWLL Originals film: a 20-second, seamless 4K loop that treats a Lorenz attractor as a sculptural object rather than a plot. The aesthetic is black ink on white, with clean, deliberate linework and no glossy CGI cues. The Lorenz system is not periodic, so the loop is created by making the presentation periodic. Camera motion and the portion of the trajectory that is revealed return to the same state at the loop point. To reduce shimmer in thin animated linework, we render a 6K master sequence and downsample to 4K. The workflow is staged: seam-check stills, then a 60-frame micro-loop, then the full 600-frame render once framing and tone are locked.",
     behind: {
+      images: [
+        "/experiments/lorenz-loop/FinalLorenz1.png",
+        "/experiments/lorenz-loop/FinalLorenz200.png",
+        "/experiments/lorenz-loop/FinalLorenz400.png",
+      ],
       related: [
         {
           href: "https://axisophy.com/products/phase-portrait-005-1",
@@ -94,6 +100,14 @@ const experiments: Experiment[] = [
     summary:
       "Variations on Hertzsprung-Russell diagrams and related Gaia-derived maps, tuned for large-format print with emphasis on density, gradients, and legibility.",
     behind: {
+      images: [
+        "/experiments/gaia-hr-maps/gaia_hr_setF_magmaW_full_density_square_2000.webp",
+        "/experiments/gaia-hr-maps/gaia_hr_setF_magmaW_turnoff_knee_density_square_2000.webp",
+        "/experiments/gaia-hr-maps/gaia_hr_setF_cividisW_full_density_square_2000.webp",
+        "/experiments/gaia-hr-maps/gaia_hr_setF_cividisW_turnoff_knee_density_square_2000.webp",
+        "/experiments/gaia-hr-maps/gaia_hr_setF_fullHex_full_hex_square_2000.webp",
+        "/experiments/gaia-hr-maps/gaia_points_full_square_2000x2000.png",
+      ],
       nextSteps: [
         "Produce three final stills with consistent tone and margins (square, wide, portrait)",
         "Test density transforms (log vs asinh) to preserve faint structures",
@@ -283,21 +297,22 @@ function ExperimentCard({
                 </div>
               )}
 
-              {/* Image gallery placeholder */}
+              {/* Image gallery */}
               {exp.behind.images && exp.behind.images.length > 0 && (
                 <div className="space-y-2">
                   <p className="text-[10px] uppercase tracking-[0.14em] text-neutral-500">
                     Gallery
                   </p>
-                  {/* TODO: Replace with actual images */}
                   <div className="grid grid-cols-3 gap-2">
                     {exp.behind.images.map((img, i) => (
-                      <div
-                        key={i}
-                        className="aspect-square bg-neutral-100 flex items-center justify-center text-neutral-400 text-[10px]"
-                      >
-                        {/* TODO: Add real image */}
-                        {i + 1}
+                      <div key={i} className="relative aspect-square">
+                        <Image
+                          src={img}
+                          alt={`${exp.title} gallery image ${i + 1}`}
+                          fill
+                          className="object-cover"
+                          sizes="(min-width: 768px) 160px, 30vw"
+                        />
                       </div>
                     ))}
                   </div>
