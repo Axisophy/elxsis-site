@@ -100,8 +100,11 @@ export default function HomePage() {
 
           {/* One experiment per line, full-width, square corners */}
           <div className="mt-6 flex flex-col">
-            {/* Experiment 1 */}
-            <article className="border border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors">
+            {/* Experiment 1: Lorenz Loop */}
+            <Link
+              href="/experiments?open=lorenz-loop-mxwll"
+              className="block border border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors"
+            >
               <h3 className="text-lg md:text-4xl lg:text-5xl font-[700] tracking-[-0.025em] text-neutral-900">
                 Lorenz Loop
               </h3>
@@ -113,37 +116,44 @@ export default function HomePage() {
               <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-neutral-500">
                 MXWLL Originals / dynamical systems
               </p>
-            </article>
+            </Link>
 
-            {/* Experiment 2 */}
-            <article className="border border-t-0 border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors">
+            {/* Experiment 2: Weyl Symmetries */}
+            <Link
+              href="/experiments?open=weyl-symmetries-grid"
+              className="block border border-t-0 border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors"
+            >
               <h3 className="text-lg md:text-4xl lg:text-5xl font-[700] tracking-[-0.025em] text-neutral-900">
-                Weyl symmetries grid
+                Weyl Symmetries series
               </h3>
               <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
-                High-resolution visualisations of Weyl group symmetries arranged
-                as a modular grid, designed as a bridge between pure mathematics
-                and large-format print editions.
+                High-resolution studies built from projections of the E8 Weyl
+                symmetry structure. Each image begins with a fixed configuration
+                and a chosen projection seed, then resolves as a dense field of
+                edges where colour encodes angular change across the projection.
               </p>
               <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-neutral-500">
                 algebraic structures / print series
               </p>
-            </article>
+            </Link>
 
-            {/* Experiment 3 */}
-            <article className="border border-t-0 border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors">
+            {/* Experiment 3: Gaia HR maps */}
+            <Link
+              href="/experiments?open=gaia-hr-maps"
+              className="block border border-t-0 border-neutral-200 px-4 md:px-6 py-4 md:py-5 hover:bg-neutral-50 transition-colors"
+            >
               <h3 className="text-lg md:text-4xl lg:text-5xl font-[700] tracking-[-0.025em] text-neutral-900">
-                Gaia stellar atlas sketches
+                Gaia HR maps
               </h3>
               <p className="mt-2 text-xs md:text-sm text-neutral-700 leading-relaxed max-w-2xl">
-                Early-phase mappings of Gaia data, testing different ways to
-                encode density, temperature, and luminosity for narrative
-                large-scale star-field prints and installations.
+                Variations on Hertzsprung-Russell diagrams and related
+                Gaia-derived maps, tuned for legibility, density, and tonal
+                control across screen and print.
               </p>
               <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-neutral-500">
-                astrophysical data / mapping
+                astrophysics / dataset maps
               </p>
-            </article>
+            </Link>
           </div>
         </section>
       </section>
