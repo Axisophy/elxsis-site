@@ -117,7 +117,12 @@ function ExperimentCard({
                 </div>
               )}
 
-              {/* Image gallery */}
+              {/* Image gallery
+                 * unoptimized: preserves crisp linework and avoids unwanted
+                 * recompression on artwork-heavy assets (Weyl projections,
+                 * HR density maps, Lorenz renders). Consider converting large
+                 * PNGs to WebP manually if file sizes become an issue.
+                 */}
               {exp.behind.images && exp.behind.images.length > 0 && (
                 <div className="space-y-2">
                   <p className="text-[10px] uppercase tracking-[0.14em] text-neutral-500">
