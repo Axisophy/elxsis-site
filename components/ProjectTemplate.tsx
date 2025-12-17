@@ -1,4 +1,5 @@
 // components/ProjectTemplate.tsx
+import Image from "next/image";
 import Link from "next/link";
 import { PageTitle, SectionTitle } from "@/components/typography";
 
@@ -11,6 +12,12 @@ export type ProjectData = {
   seeking: string[];
   images?: string[];
   relatedExperiments?: { label: string; slug: string }[];
+  heroImage?: {
+    src: string;
+    alt: string;
+    caption: string;
+    aspect?: "wide" | "square";
+  };
 };
 
 type ProjectTemplateProps = {
@@ -33,6 +40,32 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
           ))}
         </div>
       </header>
+
+      {/* Hero image */}
+      {project.heroImage && (
+        <div className="mb-10 lg:mb-14 max-w-4xl">
+          <div
+            className={`relative w-full ${
+              project.heroImage.aspect === "square"
+                ? "aspect-square"
+                : "aspect-[16/9]"
+            }`}
+          >
+            <Image
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+              fill
+              className="object-cover"
+              quality={95}
+              sizes="(min-width: 1024px) 900px, 100vw"
+              unoptimized
+            />
+          </div>
+          <p className="mt-2 text-[11px] text-neutral-500">
+            {project.heroImage.caption}
+          </p>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl">
         {/* In scope */}

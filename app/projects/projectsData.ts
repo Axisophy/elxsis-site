@@ -62,6 +62,12 @@ export const projects: ProjectMeta[] = [
     relatedExperiments: [
       { label: "Gaia HR maps", slug: "gaia-hr-maps" },
     ],
+    heroImage: {
+      src: "/experiments/gaia-hr-maps/gaia_hr_setC_full_hex_full_hex_wide_2400x1350.webp",
+      alt: "Gaia HR diagram density map",
+      caption: "Gaia HR maps study",
+      aspect: "wide",
+    },
   },
   {
     slug: "symmetry-projections",
@@ -90,5 +96,11 @@ export const projects: ProjectMeta[] = [
     relatedExperiments: [
       { label: "Weyl Symmetries series", slug: "weyl-symmetries-grid" },
     ],
+    heroImage: {
+      src: "/experiments/weyl-symmetries/Weyl-coxeter_plot_17_30inch_0p2mm__E8_rnd_s0_d_anti_all_ec-ang_g2.3_tw0_rings0_keep1_762x762mm_300dpi.webp",
+      alt: "Weyl Symmetries E8 projection",
+      caption: "From the Weyl Symmetries series",
+      aspect: "square",
+    },
   },
 ];
