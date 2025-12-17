@@ -9,13 +9,21 @@ export default function HomePage() {
       {/* Hero image */}
       <section className="relative w-full h-[70vh] md:h-[80vh]">
         <Image
-          src="/elxsis-hero-02.jpg" // <- must match filename in /public
-          alt="Elxsis experimental visual"
+          src="/home/hero-weyl.webp"
+          alt="Weyl Symmetries series study (E8 projection)"
           fill
           priority
-          sizes="100vw"
+          quality={95}
+          sizes="(min-width: 1024px) 1000px, 100vw"
           className="object-cover"
+          unoptimized
         />
+        <Link
+          href="/projects/symmetry-projections"
+          className="absolute bottom-4 left-4 text-[10px] tracking-[0.02em] text-white/70 hover:text-white transition-colors"
+        >
+          From the Weyl Symmetries series
+        </Link>
       </section>
 
       {/* Main homepage content */}
