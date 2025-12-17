@@ -313,6 +313,7 @@ function ExperimentCard({
                           className="object-cover"
                           quality={95}
                           sizes="(min-width: 1024px) 240px, (min-width: 768px) 200px, 33vw"
+                          unoptimized
                         />
                       </div>
                     ))}
