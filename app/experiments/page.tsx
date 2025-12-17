@@ -72,6 +72,7 @@ const experiments: Experiment[] = [
     summary:
       "We are building a short MXWLL Originals film: a 20-second, seamless 4K loop that treats a Lorenz attractor as a sculptural object rather than a plot. The aesthetic is black ink on white, with clean, deliberate linework and no glossy CGI cues. The Lorenz system is not periodic, so the loop is created by making the presentation periodic. Camera motion and the portion of the trajectory that is revealed return to the same state at the loop point. To reduce shimmer in thin animated linework, we render a 6K master sequence and downsample to 4K. The workflow is staged: seam-check stills, then a 60-frame micro-loop, then the full 600-frame render once framing and tone are locked.",
     behind: {
+      note: "This study is part of Motion Studies for Invisible Systems.",
       images: [
         "/experiments/lorenz-loop/FinalLorenz1.png",
         "/experiments/lorenz-loop/FinalLorenz200.png",
@@ -100,6 +101,7 @@ const experiments: Experiment[] = [
     summary:
       "Variations on Hertzsprung-Russell diagrams and related Gaia-derived maps, tuned for large-format print with emphasis on density, gradients, and legibility.",
     behind: {
+      note: "This thread feeds into Stellar Cartographies.",
       images: [
         "/experiments/gaia-hr-maps/gaia_hr_setF_magmaW_full_density_square_2000.webp",
         "/experiments/gaia-hr-maps/gaia_hr_setF_magmaW_turnoff_knee_density_square_2000.webp",
