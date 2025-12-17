@@ -127,6 +127,10 @@ const experiments: Experiment[] = [
     summary:
       "High-resolution studies built from projections of the E8 Weyl symmetry structure. Each image begins with a fixed configuration and a chosen projection seed, then resolves as a dense field of edges where colour encodes angular change across the projection. The goal is a repeatable series of distinct works rather than a single definitive view.",
     behind: {
+      images: [
+        "/experiments/weyl-symmetries/WeylSymmetries-001p1-coxeter_plot_18_50inch_1mm__E8_rnd_s596_d_anti_all_ec-ang_g0.55_tw0_rings0_keep1_762x762mm_300dpi.webp",
+        "/experiments/weyl-symmetries/WeylSymmetries-002p2-coxeter_plot_16_white_50inch_1mm__E8_rnd_s0_d_anti_all_ec-ang_g0.2_tw0_rings0_keep1_762x762mm_300dpi.webp",
+      ],
       note: "The series is controlled through a small set of parameters that affect structure and tone, including projection choice, edge selection, line weight, opacity, and response curves. Outputs are designed as square large-format works suitable for print and editioning. Typical output uses 240 points and 7,140 edges, rendered as a square large-format vector file.",
       related: [
         {
