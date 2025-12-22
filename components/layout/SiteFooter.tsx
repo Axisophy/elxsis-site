@@ -113,9 +113,7 @@ export default function SiteFooter() {
       {/* Bottom strip: copyright + legal */}
       <div className="border-t border-neutral-900">
         <div className="w-full px-4 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-2 text-[11px] md:text-xs text-neutral-400">
-          <span>
-            © {year} Elxsis / Bang Industries Ltd. All rights reserved.
-          </span>
+          <span>© {year} Elxsis / Simon Tyler</span>
           <div className="flex items-center gap-4">
             <Link
               href="/terms"
