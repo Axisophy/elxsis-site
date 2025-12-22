@@ -1,30 +1,29 @@
 // app/page.tsx
-import Image from "next/image";
 import Link from "next/link";
 import { PageTitle } from "@/components/typography";
 
 export default function HomePage() {
   return (
     <main className="w-full">
-      {/* Hero image */}
+      {/* Hero video */}
       <section className="relative w-full h-[70vh] md:h-[80vh]">
-        <Image
-          src="/home/hero-weyl.webp"
-          alt="Weyl Symmetries series study (E8 projection)"
-          fill
-          priority
-          quality={95}
-          sizes="(min-width: 1024px) 1000px, 100vw"
-          className="object-cover"
-          unoptimized
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/home/hero-lorenz-poster.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/home/hero-lorenz-loop.mp4" type="video/mp4" />
+        </video>
       </section>
       <div className="px-4 lg:px-8 py-2">
         <Link
-          href="/projects/symmetry-projections"
+          href="/projects/motion-studies-for-invisible-systems"
           className="text-[11px] text-neutral-500 hover:text-neutral-700 transition-colors"
         >
-          Weyl Symmetries series, E8 projection
+          Lorenz Loop, from Motion Studies for Invisible Systems
         </Link>
       </div>
 
