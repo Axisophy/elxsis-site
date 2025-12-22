@@ -128,6 +128,9 @@ export const experiments: Experiment[] = [
       images: [
         "/experiments/weyl-symmetries/WeylSymmetries-001p1-coxeter_plot_18_50inch_1mm__E8_rnd_s596_d_anti_all_ec-ang_g0.55_tw0_rings0_keep1_762x762mm_300dpi.webp",
         "/experiments/weyl-symmetries/WeylSymmetries-002p2-coxeter_plot_16_white_50inch_1mm__E8_rnd_s0_d_anti_all_ec-ang_g0.2_tw0_rings0_keep1_762x762mm_300dpi.webp",
+        "/experiments/weyl-symmetries/Weyl-coxeter_plot_9__E8_pca_s0_d_full_all_ec-ang_g1_tw0_rings0_keep1_762x762mm_300dpi.webp",
+        "/experiments/weyl-symmetries/weyl-coxeter_plot_14__E8_rnd_s3377_d_anti_all_ec-ang_g1.3_tw0_rings31_keep1_762x762mm_300dpi.webp",
+        "/experiments/weyl-symmetries/weyl-coxeter_plot_15__E7_rnd_s0_d_full_all_ec-ang_g1.25_tw0_rings0_keep1_762x762mm_300dpi.webp",
       ],
       note: "The series is controlled through a small set of parameters that affect structure and tone, including projection choice, edge selection, line weight, opacity, and response curves. Outputs are designed as square large-format works suitable for print and editioning. Typical output uses 240 points and 7,140 edges, rendered as a square large-format vector file.",
       related: [
