@@ -152,8 +152,12 @@ export const experiments: Experiment[] = [
       "Aizawa attractor cross-sections and orbit bundles, designed as a series of motion planes that can be recombined into longer sequences or interactive views.",
     behind: {
       images: [
+        "/experiments/aizawa-motion-planes/attractor_aizawa_xy_a0p96_b0p62_c0p64_d2p85_dt0p005_warm22000_steps4000000_exp2_gam0p9_4000x4000_c44868a030ab_20251224-175631.png",
+        "/experiments/aizawa-motion-planes/attractor_aizawa_xy_a0p96_b0p62_c0p64_d2p85_dt0p005_warm22000_steps4000000_exp2_gam0p9_inv_4000x4000_ae8c6dfe73fa_20251224-181620.png",
         "/experiments/aizawa-motion-planes/attractor_aizawa_xz_a0p96_b0p62_c0p64_d2p85_dt0p005_warm22000_steps4000000_exp2_gam0p9_4000x4000_73c10f843ed4_20251224-161227.png",
         "/experiments/aizawa-motion-planes/attractor_aizawa_xz_a0p96_b0p62_c0p64_d2p85_dt0p005_warm22000_steps4000000_exp2_gam0p9_inv_4000x4000_24c5b93437f4_20251224-172154.png",
+        "/experiments/aizawa-motion-planes/attractor_aizawa_yz_a0p96_b0p62_c0p64_d2p85_dt0p005_warm22000_steps4000000_exp2_gam0p9_4000x4000_ea51247e8e7e_20251224-173549.png",
+        "/experiments/aizawa-motion-planes/attractor_aizawa_yz_a0p96_b0p62_c0p64_d2p85_dt0p005_warm22000_steps4000000_exp2_gam0p9_inv_4000x4000_21815ca328cf_20251224-172858.png",
       ],
       related: [
         {
