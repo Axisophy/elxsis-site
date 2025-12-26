@@ -190,12 +190,12 @@ export const experiments: Experiment[] = [
       "Scalar fields and isosurfaces derived from hydrogenic wavefunctions, designed as both static depth fields and potential 3D animation material.",
     behind: {
       images: [
-        "/experiments/hydrogen-orbitals/elxsis_hydrogen_1s_4096px_20251226_152748.png",
-        "/experiments/hydrogen-orbitals/elxsis_hydrogen_2pz_4096px_20251226_152525.png",
-        "/experiments/hydrogen-orbitals/elxsis_hydrogen_3dz2_4096px_20251226_152605.png",
-        "/experiments/hydrogen-orbitals/elxsis_hydrogen_3pz_4096px_20251226_152543.png",
-        "/experiments/hydrogen-orbitals/elxsis_hydrogen_4fz3_4096px_20251226_152630.png",
-        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5fz3_4096px_20251226_152653.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5pz_4096px_20251226_181325.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5fz3_4096px_20251226_181333.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_6s_4096px_20251226_181342.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5s_4096px_20251226_181448.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5s_4096px_20251226_181535.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5s_4096px_20251226_181642.png",
       ],
     },
   },
