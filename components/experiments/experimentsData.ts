@@ -188,6 +188,16 @@ export const experiments: Experiment[] = [
     featuredRank: 4,
     summary:
       "Scalar fields and isosurfaces derived from hydrogenic wavefunctions, designed as both static depth fields and potential 3D animation material.",
+    behind: {
+      images: [
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_1s_4096px_20251226_152748.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_2pz_4096px_20251226_152525.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_3dz2_4096px_20251226_152605.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_3pz_4096px_20251226_152543.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_4fz3_4096px_20251226_152630.png",
+        "/experiments/hydrogen-orbitals/elxsis_hydrogen_5fz3_4096px_20251226_152653.png",
+      ],
+    },
   },
   {
     slug: "neutrino-oscillation-maps",
@@ -203,10 +213,8 @@ export const experiments: Experiment[] = [
       images: [
         "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144700.png",
         "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144716.png",
-        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144729.png",
         "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144739.png",
         "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144836.png",
-        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144846.png",
         "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_145213.png",
         "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_150154.png",
       ],
