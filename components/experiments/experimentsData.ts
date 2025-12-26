@@ -199,6 +199,18 @@ export const experiments: Experiment[] = [
     featuredRank: 6,
     summary:
       "Early visual sketches of three-flavour neutrino oscillation probabilities, mapping parameter spaces and path-dependent transitions into layered visual structures.",
+    behind: {
+      images: [
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144700.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144716.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144729.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144739.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144836.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_144846.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_145213.png",
+        "/experiments/neutrino-oscillations/elxsis_neutrino_L_vs_E_Standard_4096px_20251226_150154.png",
+      ],
+    },
   },
 ];
 
