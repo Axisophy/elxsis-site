@@ -177,6 +177,16 @@ export const experiments: Experiment[] = [
     featuredRank: 5,
     summary:
       "Low-resolution gravitational n-body tests focusing on orbit pattern aesthetics rather than strict physical realism, intended as a foundation for future collaborations.",
+    behind: {
+      images: [
+        "/experiments/n-body-choreography/choreography-2_20251228_121652.png",
+        "/experiments/n-body-choreography/choreography-3_20251228_141524.png",
+        "/experiments/n-body-choreography/choreography-5_20251228_212617.png",
+        "/experiments/n-body-choreography/choreography-6_20251229_120804.png",
+        "/experiments/n-body-choreography/choreography-7_20251229_120932.png",
+        "/experiments/n-body-choreography/choreography-8_20251229_121128.png",
+      ],
+    },
   },
   {
     slug: "quantum-hydrogen-fields",
