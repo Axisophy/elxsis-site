@@ -73,7 +73,7 @@ export default function CollaboratePage() {
             href="https://mxwll.io"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-4"
+            className="underline-offset-4 hover:underline"
           >
             MXWLL
           </a>
@@ -82,7 +82,7 @@ export default function CollaboratePage() {
         </p>
         <p className="text-sm text-neutral-600">
           For general enquiries, see{" "}
-          <Link href="/contact" className="underline underline-offset-4">
+          <Link href="/contact" className="underline-offset-4 hover:underline">
             Contact
           </Link>
           .
@@ -125,8 +125,8 @@ export default function CollaboratePage() {
         <SectionTitle className="mb-6">How to propose a collaboration</SectionTitle>
         <ul className="space-y-3 max-w-xl">
           {proposalChecklist.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-sm text-neutral-700">
-              <span className="flex-shrink-0 w-5 h-5 border border-neutral-300 rounded-sm mt-0.5" />
+            <li key={i} className="flex items-start gap-2 text-sm text-neutral-700">
+              <span className="text-neutral-400 mt-0.5">•</span>
               <span>{item}</span>
             </li>
           ))}
@@ -135,7 +135,7 @@ export default function CollaboratePage() {
           Send proposals to{" "}
           <a
             href="mailto:studio@elxsis.com"
-            className="underline underline-offset-4"
+            className="underline-offset-4 hover:underline"
           >
             studio@elxsis.com
           </a>

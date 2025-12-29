@@ -9,7 +9,7 @@ export default function ContactPage() {
         <p className="text-[15px] md:text-[18px] leading-relaxed text-neutral-900">
           For collaboration opportunities, current invitations, and how to
           propose a project, see the{" "}
-          <Link href="/collaborate" className="underline underline-offset-4">
+          <Link href="/collaborate" className="underline-offset-4 hover:underline">
             Collaborate
           </Link>{" "}
           page.
@@ -19,7 +19,7 @@ export default function ContactPage() {
           existing work, please email{" "}
           <a
             href="mailto:studio@elxsis.com"
-            className="underline underline-offset-4"
+            className="underline-offset-4 hover:underline"
           >
             studio@elxsis.com
           </a>{" "}
@@ -30,7 +30,7 @@ export default function ContactPage() {
             href="https://instagram.com/elx_sis"
             target="_blank"
             rel="noreferrer"
-            className="underline underline-offset-4"
+            className="underline-offset-4 hover:underline"
           >
             @elx_sis
           </a>{" "}

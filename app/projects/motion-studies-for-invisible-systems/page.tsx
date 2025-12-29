@@ -226,7 +226,7 @@ export default function MotionStudiesPage() {
             <li>
               <Link
                 href="/experiments?open=lorenz-loop-mxwll"
-                className="text-neutral-700 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 transition-colors"
+                className="text-neutral-700 underline-offset-4 hover:underline transition-colors"
               >
                 Lorenz Loop
               </Link>

@@ -94,14 +94,14 @@ export default function SiteFooter() {
                 href="https://instagram.com/elx_sis"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm md:text-base font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-500 hover:decoration-white"
+                className="text-sm md:text-base font-[600] tracking-[-0.02em] underline-offset-4 hover:underline"
               >
                 Instagram: <span className="font-[400]">@elx_sis</span>
               </a>
 
               <a
                 href="mailto:studio@elxsis.com"
-                className="text-sm md:text-base font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-500 hover:decoration-white"
+                className="text-sm md:text-base font-[600] tracking-[-0.02em] underline-offset-4 hover:underline"
               >
                 Email: <span className="font-[400]">studio@elxsis.com</span>
               </a>

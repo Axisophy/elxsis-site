@@ -25,7 +25,7 @@ export default function AboutPage() {
                 href="https://mxwll.io"
                 target="_blank"
                 rel="noreferrer"
-                className="underline underline-offset-4"
+                className="underline-offset-4 hover:underline"
               >
                 MXWLL
               </a>

@@ -109,7 +109,7 @@ function ExperimentCard({
                       target="_blank"
                       rel="noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-block text-xs md:text-sm text-neutral-600 underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
+                      className="inline-block text-xs md:text-sm text-neutral-600 underline-offset-4 hover:underline"
                     >
                       {link.label}
                     </a>

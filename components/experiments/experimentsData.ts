@@ -15,10 +15,10 @@ export type BehindTheWork = {
  *   - titles and summaries may change freely
  *   - use aliases to map old slugs to the canonical one if a slug must change
  *
- * Stage (fixed): "Shipping" | "Seeding" | "Future"
- *   - Shipping: actively being delivered
- *   - Seeding: in development or prototype
- *   - Future: planned or speculative
+ * Stage (fixed): "Released" | "Developing" | "Forthcoming"
+ *   - Released: actively being delivered
+ *   - Developing: in development or prototype
+ *   - Forthcoming: planned or speculative
  *
  * Type (controlled):
  *   - Film loop
@@ -40,7 +40,7 @@ export type Experiment = {
   aliases?: string[];
   title: string;
   tags: string[];
-  stage?: "Shipping" | "Seeding" | "Future";
+  stage?: "Released" | "Developing" | "Forthcoming";
   type?: string;
   format?: "Screen" | "Print" | "Installation";
   featuredRank?: number;
@@ -61,7 +61,7 @@ export const experiments: Experiment[] = [
     slug: "lorenz-loop-mxwll",
     title: "Lorenz Loop",
     tags: ["MXWLL Originals", "dynamical systems", "motion"],
-    stage: "Shipping",
+    stage: "Released",
     type: "Film loop",
     format: "Screen",
     featuredRank: 1,
@@ -90,7 +90,7 @@ export const experiments: Experiment[] = [
     slug: "gaia-hr-maps",
     title: "Gaia HR maps",
     tags: ["astrophysics", "data", "mapping"],
-    stage: "Shipping",
+    stage: "Released",
     type: "Dataset map",
     format: "Screen",
     featuredRank: 2,
@@ -118,7 +118,7 @@ export const experiments: Experiment[] = [
     slug: "weyl-symmetries-grid",
     title: "Weyl Symmetries series",
     tags: ["algebraic structures", "print series"],
-    stage: "Seeding",
+    stage: "Developing",
     type: "Still study",
     format: "Print",
     featuredRank: 3,
@@ -145,7 +145,7 @@ export const experiments: Experiment[] = [
     slug: "aizawa-motion-planes",
     title: "Aizawa motion planes",
     tags: ["dynamical systems", "attractors"],
-    stage: "Seeding",
+    stage: "Developing",
     type: "Still study",
     format: "Print",
     summary:
@@ -171,7 +171,7 @@ export const experiments: Experiment[] = [
     slug: "n-body-orbit-sketches",
     title: "N-body orbit sketches",
     tags: ["n-body", "simulation", "gravity"],
-    stage: "Seeding",
+    stage: "Developing",
     type: "System sketch",
     format: "Screen",
     featuredRank: 5,
@@ -192,7 +192,7 @@ export const experiments: Experiment[] = [
     slug: "quantum-hydrogen-fields",
     title: "Quantum hydrogen fields",
     tags: ["quantum", "wavefunctions"],
-    stage: "Seeding",
+    stage: "Developing",
     type: "Still study",
     format: "Print",
     featuredRank: 4,
@@ -210,13 +210,34 @@ export const experiments: Experiment[] = [
     },
   },
   {
+    slug: "kerr-geodesics",
+    title: "Kerr geodesics",
+    tags: ["astrophysics", "black holes", "general relativity"],
+    stage: "Developing",
+    type: "Still study",
+    format: "Print",
+    featuredRank: 6,
+    summary:
+      "Photon orbits around spinning black holes — visualising how light bends and spirals in curved spacetime near a rotating mass.",
+    behind: {
+      images: [
+        "/experiments/kerr-black-holes/elxsis_kerr_Equatorial_spiral-in_a0.00_8192px_20251226_155654.png",
+        "/experiments/kerr-black-holes/elxsis_kerr_Equatorial_spiral-in_a0.90_8192px_20251226_160726.png",
+        "/experiments/kerr-black-holes/elxsis_kerr_Equatorial_spiral-in_a1.00_8192px_20251226_155731.png",
+        "/experiments/kerr-black-holes/elxsis_kerr_Parallel_ray_bundle_a0.90_8192px_20251226_155842.png",
+        "/experiments/kerr-black-holes/elxsis_kerr_Parallel_ray_bundle_a0.90_8192px_20251226_160352.png",
+        "/experiments/kerr-black-holes/elxsis_kerr_Parallel_ray_bundle_a0.90_8192px_20251226_160606.png",
+      ],
+    },
+  },
+  {
     slug: "neutrino-oscillation-maps",
     title: "Neutrino oscillation maps",
     tags: ["neutrinos", "oscillations"],
-    stage: "Future",
+    stage: "Forthcoming",
     type: "Dataset map",
     format: "Screen",
-    featuredRank: 6,
+    featuredRank: 7,
     summary:
       "Early visual sketches of three-flavour neutrino oscillation probabilities, mapping parameter spaces and path-dependent transitions into layered visual structures.",
     behind: {

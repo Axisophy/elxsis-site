@@ -85,7 +85,7 @@ export default function SiteHeader() {
           <div className="hidden md:flex flex-col gap-1 md:gap-1 md:items-end text-right">
             <a
               href="mailto:studio@elxsis.com"
-              className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
+              className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline-offset-4 hover:underline"
             >
               Email: <span className="font-[400]">studio@elxsis.com</span>
             </a>
@@ -94,7 +94,7 @@ export default function SiteHeader() {
               href="https://instagram.com/elx_sis"
               target="_blank"
               rel="noreferrer"
-              className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-400 hover:decoration-neutral-900"
+              className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] font-[600] tracking-[-0.02em] underline-offset-4 hover:underline"
             >
               Instagram: <span className="font-[400]">@elx_sis</span>
             </a>
@@ -120,7 +120,7 @@ export default function SiteHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setMobileOpen(false)}
-                        className="text-[16px] sm:text-[18px] font-[700] tracking-[-0.025em] leading-tight underline underline-offset-4"
+                        className="text-[16px] sm:text-[18px] font-[700] tracking-[-0.025em] leading-tight underline-offset-4 hover:underline"
                       >
                         {item.label}
                       </Link>
@@ -134,7 +134,7 @@ export default function SiteHeader() {
                     href="https://instagram.com/elx_sis"
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[12px] sm:text-[13px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-500 hover:decoration-white"
+                    className="text-[12px] sm:text-[13px] font-[600] tracking-[-0.02em] underline-offset-4 hover:underline"
                   >
                     Instagram:{" "}
                     <span className="font-[400]">@elx_sis</span>
@@ -142,7 +142,7 @@ export default function SiteHeader() {
 
                   <a
                     href="mailto:studio@elxsis.com"
-                    className="text-[12px] sm:text-[13px] font-[600] tracking-[-0.02em] underline underline-offset-4 decoration-neutral-500 hover:decoration-white"
+                    className="text-[12px] sm:text-[13px] font-[600] tracking-[-0.02em] underline-offset-4 hover:underline"
                   >
                     Email:{" "}
                     <span className="font-[400]">studio@elxsis.com</span>

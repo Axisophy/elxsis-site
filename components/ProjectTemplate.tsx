@@ -124,7 +124,7 @@ export default function ProjectTemplate({ project }: ProjectTemplateProps) {
                 <li key={i}>
                   <Link
                     href={`/experiments?open=${exp.slug}`}
-                    className="text-neutral-700 underline underline-offset-4 decoration-neutral-300 hover:decoration-neutral-900 transition-colors"
+                    className="text-neutral-700 underline-offset-4 hover:underline transition-colors"
                   >
                     {exp.label}
                   </Link>
