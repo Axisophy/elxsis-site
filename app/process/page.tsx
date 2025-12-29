@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { PageTitle, SectionTitle } from "@/components/typography";
+
+export const metadata: Metadata = {
+  title: "Process",
+  description:
+    "How Elxsis works — from research and sourcing through modelling, rendering pipelines, and collaboration workflows for high-quality visual outcomes.",
+  openGraph: {
+    title: "Process | Elxsis",
+    description:
+      "From research and sourcing through modelling, rendering, and collaboration workflows.",
+  },
+};
 
 const processSections = [
   {

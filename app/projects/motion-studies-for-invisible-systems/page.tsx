@@ -1,7 +1,20 @@
 // app/projects/motion-studies-for-invisible-systems/page.tsx
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { PageTitle, SectionTitle } from "@/components/typography";
+
+export const metadata: Metadata = {
+  title: "Motion Studies for Invisible Systems",
+  description:
+    "Animation studies drawn from dynamical systems — strange attractors, cellular automata, and complex fields — looking for images that feel precise, readable, and slightly uncanny.",
+  openGraph: {
+    title: "Motion Studies for Invisible Systems | Elxsis",
+    description:
+      "Animation studies drawn from dynamical systems, strange attractors, and complex fields.",
+    images: ["/projects/motion-studies/FinalLorenz1.webp"],
+  },
+};
 
 type Strand = {
   heading: string;

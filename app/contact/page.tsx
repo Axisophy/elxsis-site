@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PageTitle } from "@/components/typography";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Elxsis for commissions, institutional projects, or general enquiries about computational art and visual research.",
+  openGraph: {
+    title: "Contact | Elxsis",
+    description:
+      "Get in touch for commissions, institutional projects, or general enquiries.",
+  },
+};
 
 export default function ContactPage() {
   return (

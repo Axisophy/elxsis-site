@@ -1,0 +1,7 @@
+# Robots.txt for elxsis.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://elxsis.com/sitemap.xml

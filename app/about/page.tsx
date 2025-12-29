@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { PageTitle, SectionTitle } from "@/components/typography";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Elxsis is a computational art and research studio working at the intersection of computation and scientific imagination, developing visual research across dynamical systems, astrophysical data, and quantum structures.",
+  openGraph: {
+    title: "About Elxsis",
+    description:
+      "Computational art and research studio developing visual work across dynamical systems, astrophysical data, and quantum structures.",
+  },
+};
 
 export default function AboutPage() {
   return (

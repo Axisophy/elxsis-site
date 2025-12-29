@@ -1,6 +1,18 @@
 // app/collaborate/page.tsx
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PageTitle, SectionTitle } from "@/components/typography";
+
+export const metadata: Metadata = {
+  title: "Collaborate",
+  description:
+    "Collaborate with Elxsis — current invitations for partnerships with researchers, institutions, venues, and technical partners on computational art and visual research.",
+  openGraph: {
+    title: "Collaborate | Elxsis",
+    description:
+      "Current invitations for partnerships with researchers, institutions, and technical partners.",
+  },
+};
 
 const currentInvitations = [
   {

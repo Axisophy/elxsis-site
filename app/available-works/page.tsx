@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { PageTitle } from "@/components/typography";
+
+export const metadata: Metadata = {
+  title: "Available Works",
+  description:
+    "Large-format prints, editioned series, and bespoke commissions from Elxsis — works emerging from research in dynamical systems, astrophysics, and quantum structures.",
+  openGraph: {
+    title: "Available Works | Elxsis",
+    description:
+      "Large-format prints, editioned series, and bespoke commissions from Elxsis.",
+  },
+};
 
 export default function AvailableWorksPage() {
   return (

@@ -1,7 +1,19 @@
 // app/projects/page.tsx
+import type { Metadata } from "next";
 import Link from "next/link";
 import { PageTitle } from "@/components/typography";
 import { projects } from "./projectsData";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Longer-running research threads gathering multiple experiments into coherent directions — from dynamical systems studies to astrophysical visualisations and print editions.",
+  openGraph: {
+    title: "Projects | Elxsis",
+    description:
+      "Longer-running research threads gathering multiple experiments into coherent directions.",
+  },
+};
 
 export default function ProjectsPage() {
   return (
