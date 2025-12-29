@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Elxsis Website
+
+Computational art and research studio website built with [Next.js](https://nextjs.org).
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/                    # Next.js App Router pages
+  experiments/          # Experiments catalogue
+  projects/             # Project pages
+  about/, process/, etc.
+components/             # React components
+  experiments/          # Experiment data and client components
+  layout/               # Header and footer
+public/                 # Static assets
+  experiments/          # Experiment gallery images
+  projects/             # Project images
+scripts/                # Utility scripts
+```
 
-## Learn More
+## Large Media Files (Vercel Blob)
 
-To learn more about Next.js, take a look at the following resources:
+Large media files (videos, high-resolution images) are hosted on [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) to avoid Git repository bloat.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Files on Blob Storage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `experiments/lorenz-loop/lorenz_loop_4k.mp4` (350MB video)
+- `projects/motion-studies-invisible-systems/*.png` (high-res renders)
 
-## Deploy on Vercel
+These files are listed in `.gitignore` and should not be committed to Git.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Uploading New Large Files
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Get your `BLOB_READ_WRITE_TOKEN` from the Vercel dashboard:
+   - Go to Project Settings → Storage → Blob
+   - Copy the read-write token
+
+2. Add files to the `LARGE_MEDIA_FILES` array in `scripts/upload-to-blob.ts`
+
+3. Run the upload script:
+   ```bash
+   BLOB_READ_WRITE_TOKEN=your_token npx tsx scripts/upload-to-blob.ts
+   ```
+
+4. The script outputs a URL mapping. Update any references in the code to use the Blob URLs.
+
+5. Add the local files to `.gitignore`
+
+### Viewing Uploaded Files
+
+View all uploaded files in the Vercel dashboard under Project → Storage → Blob.
+
+## Environment Variables
+
+For local development, create `.env.local`:
+
+```env
+# Required for blob uploads (get from Vercel dashboard)
+BLOB_READ_WRITE_TOKEN=vercel_blob_rw_...
+```
+
+## Deployment
+
+The site deploys automatically to Vercel on push to `main`.
+
+- Production: https://elxsis.com
+- Preview deployments are created for pull requests
